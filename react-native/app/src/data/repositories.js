@@ -8,7 +8,7 @@ export default [
         stargazersCount: 43122,
         ratingAverage: 0,
         reviewCount: 0,
-        owenerAvatarUrl: 'https://avatars.githubusercontent.com/u/1561955?v=4'
+        ownerAvatarUrl: 'https://avatars.githubusercontent.com/u/1561955?v=4'
     },
     {
         id: 'midudev.midu.dev',
@@ -19,7 +19,7 @@ export default [
         stargazersCount: 43122,
         ratingAverage: 0,
         reviewCount: 0,
-        owenerAvatarUrl: 'https://avatars.githubusercontent.com/u/1561955?v=4'
+        ownerAvatarUrl: 'https://avatars.githubusercontent.com/u/1561955?v=4'
     },
     {
         id: 'midudev.midu.dev',
@@ -30,7 +30,7 @@ export default [
         stargazersCount: 43122,
         ratingAverage: 0,
         reviewCount: 0,
-        owenerAvatarUrl: 'https://avatars.githubusercontent.com/u/1561955?v=4'
+        ownerAvatarUrl: 'https://avatars.githubusercontent.com/u/1561955?v=4'
     },
     {
         id: 'midudev.midu.dev',
@@ -41,7 +41,7 @@ export default [
         stargazersCount: 43122,
         ratingAverage: 0,
         reviewCount: 0,
-        owenerAvatarUrl: 'https://avatars.githubusercontent.com/u/1561955?v=4'
+        ownerAvatarUrl: 'https://avatars.githubusercontent.com/u/1561955?v=4'
     },
     {
         id: 'midudev.midu.dev',
@@ -52,6 +52,6 @@ export default [
         stargazersCount: 43122,
         ratingAverage: 0,
         reviewCount: 0,
-        owenerAvatarUrl: 'https://avatars.githubusercontent.com/u/1561955?v=4'
+        ownerAvatarUrl: 'https://avatars.githubusercontent.com/u/1561955?v=4'
     },
 ]

@@ -1,6 +1,9 @@
 import React from 'react'
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Image } from 'react-native';
 import StyledText from './StyledText';
+import RepositoyStats from './RepositoryStats';
+import theme from '../theme';
+import RepositoryItemHeader from './RepositoryItemHeader';
 
 // Para dar estilos en react-native se utiliza StyleSheet (no podemos usar css, esta es la forma correcta). Se pueden poner en un archivo aparte o abajo del componente.
 const styles = StyleSheet.create({
@@ -9,18 +12,29 @@ const styles = StyleSheet.create({
         paddingBottom: 5,
         paddingTop: 5
     },
+    language: {
+        padding: 4,
+        color: theme.color.white,
+        backgroundColor: theme.color.primary,
+        alignSelf: 'flex-start',
+        borderRadius: 4,
+        overflow: 'hidden' // sino a veces el border radius no funciona
+    },
+    image: {
+        width: 48,
+        height: 48,
+        borderRadius: 4
+    }
 })
+
 
 export default function RepositoryItem (props) {
 
+    return (
         <View key={props.id} style={styles.container}>
-            <StyledText bold>id: {props.id}</StyledText>
-            <StyledText blue>Name: {props.fullName}</StyledText>
-            <StyledText>Description: {props.description}</StyledText>
-            <StyledText>Language: {props.language}</StyledText>
-            <StyledText small>Stars: {props.stargazersCount}</StyledText>
-            <StyledText small>Forks: {props.forksCount}</StyledText>
-            <StyledText small>Review: {props.reviewCount}</StyledText>
-            <StyledText small>Rating: {props.ratingAverage}</StyledText>           
-         </View>
+            <RepositoryItemHeader styles={styles} {...props}/>
+            <RepositoyStats  {...props}/>
+         </View>   
+    )
+
 }

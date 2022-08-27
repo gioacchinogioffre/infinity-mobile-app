@@ -11,6 +11,7 @@ import RepositoryList from './RepositoryList.js'
 // Constants - constantes estipuladas para dar estilos. Util a la hora acomodar margenes segun dispositivo
 // Flat list - para desplegar listas y hacer scroll / pensado para mas rendimiento en cuanto a listas de datos
 // Scroll - solo para vista que necesita scroll (ejemplo solo texto)
+// Image - source en lugar de src, se le pasa un objeto {{ uri: url de la imagen}}, hay que darle estilos si o si para que se renderice
 
 export default function Main() {
     return (
