@@ -9,6 +9,8 @@ import RepositoryList from './RepositoryList.js'
 // Textinput - inputs
 // Touchable - cosas que se pueden tocar en la UI (reamplaza al boton por ejemplo, se hace onPress en lugar de onClick)
 // Constants - constantes estipuladas para dar estilos. Util a la hora acomodar margenes segun dispositivo
+// Flat list - para desplegar listas y hacer scroll / pensado para mas rendimiento en cuanto a listas de datos
+// Scroll - solo para vista que necesita scroll (ejemplo solo texto)
 
 export default function Main() {
     return (
