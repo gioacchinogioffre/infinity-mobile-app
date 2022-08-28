@@ -1,7 +1,9 @@
 import React from 'react'
 import { Text, View, TouchableWithoutFeedbak } from 'react-native';
-import Constants from 'expo-constants'
-import RepositoryList from './RepositoryList.js'
+import RepositoryList from './RepositoryList.jsx'
+import AppBar from './AppBar.jsx';
+import { Redirect, Switch, Route, Routes } from 'react-router-native';
+
 
 // COMPONENTES
 // Text - unico componente para mostrar texto
@@ -15,7 +17,8 @@ import RepositoryList from './RepositoryList.js'
 
 export default function Main() {
     return (
-      <View style={{marginTop: Constants.statusBarHeight, flexGrow: 1}}>
+      <View style={{ flexGrow: 1}}>
+        <AppBar/>
         <RepositoryList/>
       </View>
     );

@@ -15,6 +15,10 @@
     fontWeights: {
         normal: '400',
         bold: '700'
+    },
+    appBar: {
+        primary: 'red',
+        primaryText: 'white'
     }
 }
 

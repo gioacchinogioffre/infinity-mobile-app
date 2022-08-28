@@ -1,11 +1,15 @@
 import React from 'react'
-import { StyleSheet, Text, View, TouchableWithoutFeedback } from 'react-native';
-import Main from './src/components/Main'
+import Main from './src/components/Main.jsx'
+import { NativeRouter } from 'react-router-native'
+import Navigation from './src/components/Navigation.jsx';
 
 
 export default function App() {
   return (
-      <Main/>
+    <NativeRouter>
+      <Navigation/>
+      {/* <Main/> */}
+    </NativeRouter>
   );
 }
 

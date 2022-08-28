@@ -1,8 +1,7 @@
 import React from 'react'
 import { FlatList, Text, View, TouchableWithoutFeedback } from 'react-native';
-import Constants from 'expo-constants'
 import repositories from '../data/repositories.js';
-import RepositoryItem from './RepositoryItem'
+import RepositoryItem from './RepositoryItem.jsx'
 
 // Para dar estilos de dimensiones se hace en valor numérico, son "pixeles" representados segun el dispositivo, no son pixeles reales.
 

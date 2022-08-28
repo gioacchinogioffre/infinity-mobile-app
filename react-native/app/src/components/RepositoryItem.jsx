@@ -1,9 +1,9 @@
 import React from 'react'
 import { View, StyleSheet, Image } from 'react-native';
 import StyledText from './StyledText';
-import RepositoyStats from './RepositoryStats';
+import RepositoyStats from './RepositoryStats.jsx';
 import theme from '../theme';
-import RepositoryItemHeader from './RepositoryItemHeader';
+import RepositoryItemHeader from './RepositoryItemHeader.jsx';
 
 // Para dar estilos en react-native se utiliza StyleSheet (no podemos usar css, esta es la forma correcta). Se pueden poner en un archivo aparte o abajo del componente.
 const styles = StyleSheet.create({
@@ -18,6 +18,8 @@ const styles = StyleSheet.create({
         backgroundColor: theme.color.primary,
         alignSelf: 'flex-start',
         borderRadius: 4,
+        paddingVertical: 2,
+        marginVertical: 10,
         overflow: 'hidden' // sino a veces el border radius no funciona
     },
     image: {
