@@ -1,10 +1,13 @@
 import React from 'react'
-import { View, Text} from 'native-base'
+import { Box, Text} from 'native-base'
+import HomeSearch from '../Components/HomeSearch'
+import HomeComics from '../Components/HomeComics'
 
 export default function HomeScreen () {
     return (
-        <View>
-            <Text>HomeScreen</Text>
-        </View>
+        <Box flex={1}>
+            <HomeSearch/>
+            <HomeComics />
+        </Box>
     )
 }

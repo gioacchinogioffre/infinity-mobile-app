@@ -1,10 +1,18 @@
 import React from 'react'
-import { View, Text} from 'native-base'
+import { Box, Center, Image, VStack} from 'native-base'
+import Buttone from '../Components/Buttone'
+import logo from '../../assets/favicon.png'
 
 export default function NotVerifyScreen () {
     return (
-        <View>
-            <Text>NotVerifyScreen</Text>
-        </View>
+        <Box flex={1} safeAreaTop>
+            <Center w='full' h={250} bg='#ff000f'>
+                <Image source={logo} alt='logo' size='lg'/>
+            </Center>
+            <VStack space={6} mt={10} alignItems='center'>
+                <Buttone bg='black' color='white' >REGISTER</Buttone>
+                <Buttone bg='#ff000f' color='white' >LOGIN</Buttone>
+            </VStack>
+        </Box>
     )
 }
