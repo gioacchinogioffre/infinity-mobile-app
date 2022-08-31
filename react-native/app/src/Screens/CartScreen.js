@@ -1,7 +1,8 @@
 import React from 'react'
-import { Box, Text, Center, ScrollView} from 'native-base'
-import EmptyCart from '../Components/EmptyCart'
+import { Box, Text, Center, ScrollView, HStack, Button} from 'native-base'
+// import EmptyCart from '../Components/EmptyCart'
 import CartItems from '../Components/CartItems'
+import Buttone from '../Components/Buttone'
 
 export default function CartScreen () {
     return (
@@ -13,12 +14,20 @@ export default function CartScreen () {
             {/* Empty Cart */}
             {/* <EmptyCart/> */}
             {/* Cart Items */}
-            <ScrollView showsVerticalScrollIndicator={false}>
-                {/* <CartItems /> */}
+            <ScrollView h='full' showsVerticalScrollIndicator={false}>
+                <CartItems />
+            {/* Total */}
+                <Center mt={5}>
+                    <HStack rounded={50} justifyContent='space-between' bg='white' shadow={3} w='90%' pl={5} h={45} alignItems='center' mb={5}>
+                        <Text>Total</Text>
+                        <Button _text={{fontWeight:'bold'}} _pressed={{bg:'white', _text: {color:'#ff000f'}}} bg='#ff000f' px={10} h={45} rounded={50}>$80</Button>
+                    </HStack>
+                </Center>
+            {/* Checkout */}
+                <Center px={5}>
+                    <Buttone width='full' bg='black' color='#ffff00' mt={5} mb={10}>CHECKOUT</Buttone>
+                </Center>
             </ScrollView>
-
-
-
         </Box>
     )
 }
