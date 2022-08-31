@@ -23,7 +23,7 @@ const inputs = [
 
 export default function Profile () {
     return (
-        <Box h='full' px={5} mb={10}>
+        <Box h='90%' px={5} mb={10}>
             <ScrollView showsVerticalScrollIndicator={false}>
                 <VStack space={8} mt={5} pb={10}>
                     {inputs.map((i,index) => (
