@@ -16,7 +16,7 @@ export default function PlaceOrderScreen () {
                 </ScrollView>
                 {/* Order Item */}
                 <Box px={6} pb={3}>
-                    <Heading bold color='black' fontSize={15} isTruncated my={4}>
+                    <Heading bold color='black' fontSize={15} my={4}>
                         PRODUCTS
                     </Heading>
                     <OrderItem/>
