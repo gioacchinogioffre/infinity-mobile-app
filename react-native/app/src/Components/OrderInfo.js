@@ -17,14 +17,14 @@ export default function OrderInfo ({icon, title, subTitle, text, success, danger
                 {text}
             </Text>
             {success && (
-                <Center py={2} mt={2} rounded={5} w='full' bg='blue'>
+                <Center py={2} mt={2} rounded={5} w='full' bg='#00000f'>
                     <Text color='white' >
                      Paid on Jan 12 2021
                     </Text>
                 </Center>
             )}
             {danger && (
-                <Center py={2} mt={2} rounded={5} w='full' bg='red'>
+                <Center py={2} mt={2} rounded={5} w='full' bg='#ff000f'>
                     <Text color='white' >
                      NotDeliver
                     </Text>

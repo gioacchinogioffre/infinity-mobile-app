@@ -2,7 +2,7 @@ import React from 'react'
 import { Box, ScrollView, Heading} from 'native-base'
 import OrderInfo from '../Components/OrderInfo'
 import OrderItem from '../Components/OrderItem'
-import PlacerOrderModel from '../Components/PlacerOrderModel'
+import PlaceOrderModel from '../Components/PlaceOrderModel'
 import { FontAwesome, FontAwesome5, Ionicons } from '@expo/vector-icons'
 
 export default function PlaceOrderScreen () {
@@ -21,7 +21,7 @@ export default function PlaceOrderScreen () {
                     </Heading>
                     <OrderItem/>
                 {/* Total */}
-                    <PlacerOrderModel/>
+                    <PlaceOrderModel/>
                 </Box>
             </Box>
         </Box>
