@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { Center, Modal, Text, VStack, HStack, Button, Image, Pressable } from 'native-base'
 import Buttone from './Buttone'
 import paypal from '../../assets/images/paypal.png'
+import { useNavigation } from '@react-navigation/native'
+
 
 export default function OrderModel () {
 
@@ -28,6 +30,9 @@ export default function OrderModel () {
         },
     ]
 
+    const navigation= useNavigation() 
+
+
     return (
         <Center>
             <Buttone width='full' bg='black' mt={1} color='white' onPress={() => setShowModal(true)}>
@@ -53,8 +58,8 @@ export default function OrderModel () {
                         <Pressable w='full' justifyContent='center' h={45} onPress={() => setShowModal(false)}>
                             <Image source={paypal} alt='paypal' resizeMode='contain' w='full' h={34}/>
                         </Pressable>
-                        <Button bg='#ff000f' w='full' h={45} _text={{color:'white'}} onPress={() => setShowModal(false)} _pressed={{bg:'green'}}>
-                            PLACE YOUR ORDER
+                        <Button bg='#ff000f' w='full' h={45} _text={{color:'white'}} onPress={() => {setShowModal(false); navigation.navigate('Home')}} _pressed={{bg:'green'}}>
+                            PAY LATER
                         </Button>
                     </Modal.Footer>
                 </Modal.Content>

@@ -6,7 +6,7 @@ import { FontAwesome } from '@expo/vector-icons'
 
 
 const Swiper = () => (
-    <SwipeListView rightOpenValue={0} previewRowKey='0' previewOpenValue={-20} previewOpenDelay={3000} data={comics} renderHiddenItem={hiddenItem} renderItem={renderItem} showsVerticalScrollIndicator={false} />
+    <SwipeListView rightOpenValue={0} previewRowKey='0' previewOpenValue={-20} previewOpenDelay={3000} data={comics.slice(0,3)} renderHiddenItem={hiddenItem} renderItem={renderItem} showsVerticalScrollIndicator={false} />
 )
 
 const renderItem = (data) => (

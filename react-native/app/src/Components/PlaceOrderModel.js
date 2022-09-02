@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Center, Modal, Text, VStack, HStack, Button } from 'native-base'
 import Buttone from './Buttone'
+import { useNavigation } from '@react-navigation/native'
 
 export default function PlacerOrderModel () {
 
@@ -27,6 +28,8 @@ export default function PlacerOrderModel () {
         },
     ]
 
+    const navigation= useNavigation() 
+
     return (
         <Center mb={5}>
             <Buttone width='full' bg='black' mt={5} mb={5}color='white' onPress={() => setShowModal(true)}>
@@ -49,7 +52,7 @@ export default function PlacerOrderModel () {
                         </VStack>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button bg='#ff000f' w='full' h={45} _text={{color:'white'}} onPress={() => setShowModal(false)} _pressed={{bg:'green'}}>
+                        <Button onPress={() => {navigation.navigate('Order'); setShowModal(false)} } bg='#ff000f' w='full' h={45} _text={{color:'white'}} _pressed={{bg:'green'}}>
                             PLACE YOUR ORDER
                         </Button>
                     </Modal.Footer>

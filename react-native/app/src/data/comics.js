@@ -7,7 +7,7 @@ const comics = [
         image: images,
         description: 'ESTO ES UN COMIC',
         price: 70,
-        countInStock: 4,
+        countInStock: 0,
         rating: 4.4,
         numReviews: 3,
     },

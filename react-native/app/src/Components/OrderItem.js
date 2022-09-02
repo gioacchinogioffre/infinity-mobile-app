@@ -5,7 +5,7 @@ import { Pressable } from 'react-native'
 
 export default function OrderItem () {
     return (
-        <FlatList showsVerticalScrollIndicator={false} data={comics.slice(0,3)} keyExtractor={i => i.id} renderItem={({item}) => (
+        <FlatList showsVerticalScrollIndicator={false} data={comics.slice(0,2)} keyExtractor={i => i.id} renderItem={({item}) => (
             <Pressable>
                 <Box mb={3}>
                     <HStack alignItems='center' bg='white' shadow={1} rounded={10} overflow='hidden'>

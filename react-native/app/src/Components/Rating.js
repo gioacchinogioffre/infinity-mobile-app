@@ -1,4 +1,4 @@
-import { HStack } from "native-base";
+import { HStack, Text } from "native-base";
 import React from 'react'
 import { FontAwesome} from '@expo/vector-icons';
 
@@ -24,7 +24,7 @@ export default function Rating ({value, text, color}) {
             name={ value>=5 ? 'star' : value >= 4.5 ? 'star-half-o' :'star-o'  } 
             color={color} size={size} />
             {text && 
-            <Text>{text}</Text>
+            <Text ml={2}>{text}</Text>
             }
         </HStack>
     )

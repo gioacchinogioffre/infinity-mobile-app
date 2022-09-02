@@ -5,6 +5,7 @@ import paypal from '../../assets/images/paypal.png'
 import discover from '../../assets/images/discover.png'
 import google from '../../assets/images/googlePay.png'
 import { FontAwesome, Ionicons } from '@expo/vector-icons'
+import { useNavigation } from '@react-navigation/native'
 
 const methods = [
     {
@@ -25,6 +26,9 @@ const methods = [
 ]
 
 export default function PaymentScreen () {
+
+    const navigation= useNavigation() 
+
     return (
         <Box flex={1} safeArea py={5} bg='#ff000f'>
             {/* HEADER */ }
@@ -46,7 +50,7 @@ export default function PaymentScreen () {
 }
                         </HStack>
                         ))}
-                     <Buttone color='white' bg='black' mt={5}>CONTINUE</Buttone>
+                     <Buttone onPress={() => navigation.navigate('PlaceOrder')} color='white' bg='black' mt={5}>CONTINUE</Buttone>
                      <Text italic textAlign='center'>Payment method is <Text bold>Paypal</Text> by default</Text>
                     </VStack>
                 </ScrollView>

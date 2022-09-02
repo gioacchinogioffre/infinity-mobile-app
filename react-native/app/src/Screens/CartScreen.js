@@ -3,8 +3,12 @@ import { Box, Text, Center, ScrollView, HStack, Button} from 'native-base'
 // import EmptyCart from '../Components/EmptyCart'
 import CartItems from '../Components/CartItems'
 import Buttone from '../Components/Buttone'
+import { useNavigation } from '@react-navigation/native'
 
 export default function CartScreen () {
+
+    const navigation= useNavigation() 
+
     return (
         <Box safeAreaTop >
             {/* Header */}
@@ -25,7 +29,7 @@ export default function CartScreen () {
                 </Center>
             {/* Checkout */}
                 <Center px={5}>
-                    <Buttone width='full' bg='black' color='#ffff00' mt={5} mb={10}>CHECKOUT</Buttone>
+                    <Buttone onPress={() => navigation.navigate('Shipping')} width='full' bg='black' color='#ffff00' mt={5} mb={10}>CHECKOUT</Buttone>
                 </Center>
             </ScrollView>
         </Box>

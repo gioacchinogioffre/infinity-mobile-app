@@ -4,7 +4,7 @@ import { MaterialIcons, FontAwesome} from '@expo/vector-icons';
 
 
 
-export default function LoginScreen () {
+export default function LoginScreen ({navigation}) {
     return (
         <Box flex={1} justifyContent='center' >
             <Heading>LOGIN</Heading>
@@ -12,10 +12,10 @@ export default function LoginScreen () {
                 <Input InputLeftElement={<MaterialIcons name="email" size={20} color="red" />} variant='underlined' placeholder='user@gmail.com' w='50%'></Input>
                 <Input type='password' InputLeftElement={<FontAwesome name="bullseye" size={20} color="red" />} variant='underlined' placeholder='********' w='50%'></Input>
             </VStack>
-            <Button _pressed={{bg: '#000000'}} my={3} w= '40%' rounded={10} bg='#ff000f'>
+            <Button onPress={() => navigation.navigate('Bottom')} _pressed={{bg: '#000000'}} my={3} w= '40%' rounded={10} bg='#ff000f'>
                 LOGIN
             </Button>
-            <Pressable mt={4}>
+            <Pressable onPress={() => navigation.navigate('Register')} mt={4}>
                 <Text>SIGN UP</Text>
             </Pressable>
         </Box>

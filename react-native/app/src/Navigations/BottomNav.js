@@ -8,11 +8,6 @@ import ProfileScreen from '../Screens/ProfileScreen'
 import CartScreen from '../Screens/CartScreen'
 
 const Tab = createBottomTabNavigator()
-const CustomTab = ({children, onPress}) => (
-    <Pressable onPress={onPress} h={100} w={100} rounded='full' bg='#ff000f' top={-20} shadow={2}>
-        {children}
-    </Pressable>
-)
 
 export default function BottomNav () {
     return (
