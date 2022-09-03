@@ -7,26 +7,32 @@ import RegisterScreen from './src/screens/RegisterScreen'
 import OrderScreen from './src/screens/LoginScreen'
 import BottomNav from './src/navigations/BottomNav'
 import SingleProductScreen from './src/screens/SingleProductScreen';
+import { Provider } from "react-redux";
+import store from './src/redux/store' 
+
 
 const Stack = createNativeStackNavigator()
 
 export default function App() {
   return (
-    <NativeBaseProvider>
-      <NavigationContainer>
-        <StatusBar hidden={true}/>
-        <Stack.Navigator initialRouteName='Login' screenOptions={{
-          headerShown: false
-        }}>
-          <Stack.Screen name='Login' component={LoginScreen}/>
-          <Stack.Screen name='Register' component={RegisterScreen}/>
-          <Stack.Screen name='Order' component={OrderScreen}/>
-          <Stack.Screen name='Single' component={SingleProductScreen}/>
-          <Stack.Screen name='Bottom' component={BottomNav}/>
+    <Provider store={store}>
+      <NativeBaseProvider>
+        <NavigationContainer>
+          <StatusBar hidden={true}/>
+          <Stack.Navigator initialRouteName='Login' screenOptions={{
+            headerShown: false
+          }}>
+            <Stack.Screen name='Login' component={LoginScreen}/>
+            <Stack.Screen name='Register' component={RegisterScreen}/>
+            <Stack.Screen name='Order' component={OrderScreen}/>
+            <Stack.Screen name='Single' component={SingleProductScreen}/>
+            <Stack.Screen name='Bottom' component={BottomNav}/>
 
-        </Stack.Navigator>
-      </NavigationContainer>
-    </NativeBaseProvider>
+          </Stack.Navigator>
+        </NavigationContainer>
+      </NativeBaseProvider>
+
+    </Provider>
   );
 }
 

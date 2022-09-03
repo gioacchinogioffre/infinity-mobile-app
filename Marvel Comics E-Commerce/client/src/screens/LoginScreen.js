@@ -31,6 +31,11 @@ export default function LoginScreen ({navigation}) {
         setUser(userInfo)
    }
 
+   const [input, setInput] = useState({
+    name: '',
+    email: '',
+   })
+
 
     return (
         <Box flex={1} justifyContent='center' >
