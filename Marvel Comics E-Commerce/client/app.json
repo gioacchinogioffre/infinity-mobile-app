@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Marvel Comics Shop",
-    "slug": "app",
+    "name": "marvel-comic-shop",
+    "slug": "marvel-comic-shop",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/favicon.png",
@@ -18,9 +18,11 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.jgioffre.marvel-comic-shop"
     },
     "android": {
+      "package": "com.jgioffre.marvel_comic_shop",
       "adaptiveIcon": {
         "foregroundImage": "./assets/favicon.png",
         "backgroundColor": "#FFFFFF"
