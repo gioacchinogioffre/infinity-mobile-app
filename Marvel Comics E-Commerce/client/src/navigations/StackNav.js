@@ -1,7 +1,7 @@
 import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import HomeScreen from '../screens/HomeScreen'
-import SingleProductScreen from '../screens/SingleProductScreen'
+import ComicDetail from '../screens/ComicDetail'
 import ShippingScreen from '../screens/ShippingScreen'
 import PaymentScreen from '../screens/PaymentScreen'
 import PlaceOrderScreen from '../screens/PlaceOrderScreen'
@@ -16,7 +16,7 @@ export default function StackNav () {
             headerBackTitleVisible: false
           }}>
             <Stack.Screen name='Home' component={HomeScreen}/>
-            <Stack.Screen name='Single' component={SingleProductScreen}/>
+            <Stack.Screen name='Single' component={ComicDetail}/>
             <Stack.Screen name='Shipping' component={ShippingScreen}/>
             <Stack.Screen name='Cart' component={CartScreen}/>
             <Stack.Screen name='Checkout' component={PaymentScreen}/>

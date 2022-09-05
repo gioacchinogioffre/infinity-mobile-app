@@ -42,7 +42,6 @@ export default function Review () {
                      <TextArea bg='#D3D3D3' h={100} _focus={{bg: '#D3D3D3', borderColor:'#D3D3D3'}} placeholder='The best comic by far..' ></TextArea>
                     </FormControl>
                     <Buttone bg={'#ff000f'} mt={2} color='white'>SUBMIT</Buttone>
-                    <Message bg='black' color='white'>Please Login to write a review</Message>
                 </VStack>
 
             </Box>

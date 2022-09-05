@@ -10,15 +10,29 @@ export default function RegisterScreen ({navigation}) {
     const dispatch = useDispatch()
 
     const [input, setInput] = useState({
-        userName: 'asd',
-        email: 'asd',
-        password: 'asd'
+        userName: '',
+        email: '',
+        password: ''
        })
 
     const signUp = () => {
-        dispatch(postUser(input))
-        // navigation.navigate('Bottom')
+        // dispatch(postUser(input))
+        navigation.navigate('Bottom')
     }   
+
+    const handleOnChange = event => {
+        event.preventDefault()
+
+      
+        setInput({
+            ...input,
+            [event.target.name]:event.target.value
+        })
+        // setError(validateForm({
+        //     ...input,
+        //     [e.target.name]:e.target.value
+        // }))
+    }
 
 
     return (
@@ -26,7 +40,7 @@ export default function RegisterScreen ({navigation}) {
             <Heading>SIGN UP</Heading>
             <VStack space={6} pt='4'>
                 {/* USERNAME */}
-                <Input InputLeftElement={<FontAwesome name="user" size={20} color="red" />} name='userName' value={input.userName} variant='underlined' placeholder='Username' w='50%'></Input>
+                <Input onChange={e => handleOnChange(e)} InputLeftElement={<FontAwesome name="user" size={20} color="red" />} name='userName' value={input.userName} variant='underlined' placeholder='Username' w='50%'></Input>
                 {/* EMAIL */}
                 <Input InputLeftElement={<MaterialIcons name="email" size={20} color="red" />}  name='email' value={input.email} variant='underlined' placeholder='user@gmail.com' w='50%'></Input>
                 {/* PASSWORD */}
