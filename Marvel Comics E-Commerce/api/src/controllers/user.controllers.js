@@ -15,12 +15,12 @@ export const getUser = async(req,res)=>{
 export const updateUser = async (req,res)=>{
     try{
         const {userID} = req.params
-        await Comic.findByIdAndUpdate(userID, req.body,{
+        await User.findByIdAndUpdate(userID, req.body,{
             new:true
         })
         res.status(200).json("Information updated successfully")
     }catch(error){
-        res.status(404).json({message: `${error}`})
+        res.status(404).json({message: `User not found`})
     }
     
 }

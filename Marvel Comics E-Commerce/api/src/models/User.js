@@ -15,18 +15,24 @@ const userSchema = new mongoose.Schema({
         type:String,
         required: true    
     },
+    city:{
+        type:String,
+    },
+    country:{
+        type:String
+    },
+    address:{
+        type:String
+    },
+    postalCode:{
+        type:String
+    },
     //relacion de 1:n (uno a muchos)
-    roles:[
-        {
-        type: mongoose.Schema.Types.ObjectId,
-        ref:"Role",
-        }],
-    reviews:[
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref:"Review",
-        }
-    ]
+    roles:[{type: mongoose.Schema.Types.ObjectId,  ref:"Role",}],
+
+    reviews:[{type: mongoose.Schema.Types.ObjectId, ref:"Review",}],
+
+    orders:[{type: mongoose.Schema.Types.ObjectId, ref:"Order",}]
 },{
     timestamps:false,
     versionKey:false

@@ -2,7 +2,7 @@ import { model, Schema } from "mongoose";
 import mongoose from 'mongoose';
 
 const comicSchema = new  mongoose.Schema({
-    title:{
+    name:{
         type: String,
         require:true
     },
@@ -26,6 +26,14 @@ const comicSchema = new  mongoose.Schema({
     },
     language:{
         type: String
+    },
+    numReviews:{
+        type: Number,
+        default: 0
+    },
+    stock_number:{
+        type: Number,
+        default: 0
     },
     reviews:[
         {

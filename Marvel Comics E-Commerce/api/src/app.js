@@ -1,11 +1,12 @@
 // express settings
 import express from "express";
-import morgan from 'morgan'
-import products from './routes/products'
-import auth from './routes/auth'
-import user from './routes/user'
-import comics from './routes/comics'
-import reviews from './routes/reviews'
+import morgan from 'morgan';
+import products from './routes/products';
+import auth from './routes/auth';
+import user from './routes/user';
+import comics from './routes/comics';
+import reviews from './routes/reviews';
+import orders from './routes/orders';
 import { createRole } from "./libs/initialSetup";
 
 const app = express()
@@ -23,4 +24,5 @@ app.use('/auth', auth)
 app.use('/users', user)
 app.use('/comics', comics)
 app.use('/reviews', reviews)
+app.use('/orders', orders)
  export default app;

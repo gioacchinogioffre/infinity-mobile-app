@@ -8,7 +8,7 @@ export const postReview = async(req,res)=>{
         if(rating < 1 || rating > 5){
             return res.status(404).json({message: `min 1 - max 5`})
         }
-      // recupero el comic
+      
         let comic = await Comic.findOne({id: comicID})
         let user = await User.findOne({id: userID})
 
