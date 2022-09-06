@@ -5,6 +5,8 @@ import { MaterialIcons, FontAwesome} from '@expo/vector-icons';
 import * as Google from 'expo-auth-session/providers/google'
 import * as WebBroser from 'expo-web-browser'
 import { getUser } from '../redux/actions'
+import * as bcrypt from 'bcrypt'
+
 
 
 WebBroser.maybeCompleteAuthSession() // nos permite completar la autenticacion desde el navegador y nos devuelve los resultados acá, es un modal || IMPORTANTE, SINO NO FUNCIONA
@@ -36,12 +38,18 @@ export default function LoginScreen ({navigation}) {
    }
 
    const [input, setInput] = useState({
-    email: '',
-    password: '',
+    email: 'Test',
+    password: 'test',
    })
 
+   const encryptPassword = async (password) => {
+     const salt = await bcrypt.genSalt(10)
+     return await bcrypt.hash(password, salt)
+   }
+
    const login = () => {
-        dispatch(getUser(input.email, input))
+        const password = encryptPassword(input.password)
+        dispatch(getUser(input.email, password))
         navigation.navigate('Bottom')
    }
 
