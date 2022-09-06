@@ -4,7 +4,7 @@ import { FontAwesome} from '@expo/vector-icons';
 
 
 export default function Rating ({value, text, color}) {
-    const size = 12
+    const size = 15
 
     return (
         <HStack space={0.4} mt={1} alignItems='center'>

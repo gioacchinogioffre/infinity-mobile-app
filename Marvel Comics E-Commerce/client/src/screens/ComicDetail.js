@@ -18,12 +18,12 @@ export default function ComicDetail ({route}) {
     return (
         <Box safeArea flex={1}>
             <ScrollView px={5} showsVerticalScrollIndicator={false}>
-                <Image source={{uri:comic.image}} alt='comicDetail' w= 'full' h={300} resizeMode= 'contain' />
+                <Image mt='3' source={{uri:comic.image}} alt='comicDetail' w= 'full' h={300} resizeMode= 'contain' />
                 <Heading fontSize={15} mt={5} >{comic.title}</Heading>
-                <Rating value={comic.rating} color='#ffff00' text={comic.reviews.length>0 && `${comic.reviews} reviews`} /> 
+                <Rating value={comic.rating} color='#f6bc66' text={comic.reviews.length>0 && `${comic.reviews} reviews`} /> 
                 <HStack space={2} alignItems='center' my={5}>
-                    { comic.countInStock > 0 
-                    ? <NumericInput value={value} totalWidth={90} step={1} maxValue={comic.countInStock} minValue={0} 
+                    { comic.stock > 0 
+                    ? <NumericInput value={value} totalWidth={90} step={1} maxValue={comic.stock} minValue={0} 
                     iconStyle={{color: 'white'}}rightButtonBackgroundColor='#ff000f' leftButtonBackgroundColor='#ff000f'  />
                     : <Heading  fontSize={14} italic color='#ff000f'>Out of stock</Heading>
                     }
@@ -32,7 +32,7 @@ export default function ComicDetail ({route}) {
                 </HStack>
                 <Text>{comic.description} </Text>
                 <Buttone bg='#ff000f' color='white' mt={5}>ADD TO CART</Buttone>
-                <Review></Review>
+                <Review comicId={comic._id} reviews={comic.reviews}></Review>
             </ScrollView>
         </Box>
     )

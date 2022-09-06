@@ -10,19 +10,19 @@ export default function PlacerOrderModel () {
     const OrdersInfo = [
         {
             title: 'Products',
-            price: 125.77,
+            price: 28.29,
         },
         {
             title: 'Shipping',
-            price: 34.00,
+            price: 5.99,
         },
         {
             title: 'Tax',
-            price: 11.12,
+            price: 3.12,
         },
         {
             title: 'Total Amount',
-            price: 170.89,
+            price: 37.30,
             color: '#ff000f',
             fontSize: 18
         },

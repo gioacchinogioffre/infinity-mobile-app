@@ -13,7 +13,7 @@ const Stack = createNativeStackNavigator()
 export default function StackNav () {
     return (
         <Stack.Navigator initialRouteName='Home' screenOptions={{
-            headerBackTitleVisible: false
+            headerBackTitleVisible: false, headerShown: false
           }}>
             <Stack.Screen name='Home' component={HomeScreen}/>
             <Stack.Screen name='Single' component={ComicDetail}/>

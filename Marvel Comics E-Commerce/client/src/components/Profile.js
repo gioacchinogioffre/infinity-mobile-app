@@ -60,7 +60,7 @@ export default function Profile () {
                     {inputs.map((i,index) => (
                     <FormControl key={index}>
                         <FormControl.Label _text={{fontWeight: 'bold'}}>{i.label}</FormControl.Label>
-                        <Input onChangeText={(value) => handleOnChange({name: i.name, value: value})}  type={i.type} bg='#e06666' fontSize={17} color='white' _focus={{bg:'#e06666', borderColor:'black', borderWidth:1.5 }} />
+                        <Input onChangeText={(value) => handleOnChange({name: i.name, value: value})}  type={i.type} bg='#ffaaa5' fontSize={17} color='white' _focus={{bg:'#ff686b', borderColor:'black', borderWidth:1.5 }} />
                     </FormControl>
                     ))}
                 </VStack>

@@ -5,6 +5,7 @@ export const GET_USER = 'GET_USER'
 export const UPDATE_USER = 'UPDATE_USER'
 export const GET_COMICS = 'GET_COMICS'
 export const GET_REVIEWS = 'GET_REVIEWS'
+export const POST_REVIEW = 'POST_REVIEW'
 
 // USER
 
@@ -25,9 +26,10 @@ export function postUser(user) {
 }
 
 export function getUser(email, password) {
+    console.log(password)
     return async function (dispatch) {
         try {
-            const user = await axios.get(`/users/${email}`, password);
+            const user = await axios.get(`/users/${email}?password=${password}`);
 
             return dispatch({
                 type: GET_USER,
@@ -83,6 +85,22 @@ export function getReviews() {
                 payload: info.data
             })
         } catch (error) {
+            console.log(error);
+        }
+    }
+}
+
+export function postReview(review) {
+    return async function (dispatch) {
+        try {
+            const newReview = await axios.post("/reviews", review);
+
+            return dispatch({
+                type: POST_REVIEW,
+                payload: newReview.data
+            })
+        }
+        catch (error) {
             console.log(error);
         }
     }

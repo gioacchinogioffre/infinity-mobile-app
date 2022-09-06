@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import { Text, Box, Heading, VStack, Input, Button, Pressable} from 'native-base'
+import { Text, Center, Heading, VStack, Input, Button, Pressable, Image, HStack} from 'native-base'
 import { MaterialIcons, FontAwesome} from '@expo/vector-icons';
 import * as Google from 'expo-auth-session/providers/google'
 import * as WebBroser from 'expo-web-browser'
 import { getUser } from '../redux/actions'
-import * as bcrypt from 'bcrypt'
+import bcrypt from 'bcryptjs'
+import google from '../../assets/images/google.png'
+import banner from '../../assets/images/avengers1.png'
 
 
 
@@ -38,8 +40,8 @@ export default function LoginScreen ({navigation}) {
    }
 
    const [input, setInput] = useState({
-    email: 'Test',
-    password: 'test',
+    email: '',
+    password: '',
    })
 
    const encryptPassword = async (password) => {
@@ -49,7 +51,7 @@ export default function LoginScreen ({navigation}) {
 
    const login = () => {
         const password = encryptPassword(input.password)
-        dispatch(getUser(input.email, password))
+        // dispatch(getUser(input.email, password))
         navigation.navigate('Bottom')
    }
 
@@ -66,26 +68,33 @@ export default function LoginScreen ({navigation}) {
 }
 
     return (
-        <Box flex={1} justifyContent='center' >
-            <Heading>LOGIN</Heading>
-            <VStack space={6} pt='4'>
-                <Input onChangeText={(value) => handleOnChange({name: 'email', value: value})}  InputLeftElement={<MaterialIcons name="email" size={20} color="red" />} variant='underlined' placeholder='user@gmail.com' w='50%'></Input>
-                <Input onChangeText={(value) => handleOnChange({name: 'password', value: value})}  type='text' InputLeftElement={<FontAwesome name="bullseye" size={20} color="red" />} variant='underlined' placeholder='********' w='50%'></Input>
+        <Center flex={1} bg='white'>
+            <Heading bold size="lg" my={4} fontWeight="600" color="black">Welcome Avenger!</Heading>
+            <VStack pt='4'>
+                <Input  onChangeText={(value) => handleOnChange({name: 'email', value: value})}  InputLeftElement={<MaterialIcons name="email" size={20} color="red" />} variant='underlined' placeholder='user@gmail.com' w='50%'></Input>
+                <Input my={3}onChangeText={(value) => handleOnChange({name: 'password', value: value})}  type='text' InputLeftElement={<FontAwesome name="bullseye" size={20} color="red" />} variant='underlined' placeholder='********' w='50%'></Input>
+                <Text mb='5' color='#ff000f' alignSelf="flex-end" >Forget Password?</Text>
             </VStack>
             <Button 
             onPress={login}
-             _pressed={{bg: '#000000'}} my={3} w= '40%' rounded={10} bg='#ff000f'>
+             _pressed={{bg: '#ff000f'}} w= '50%' rounded={5} bg='#ff000f' _text={{color:'white', fontWeight: 'bold'}}>
                 LOGIN
             </Button>
-            <Button 
+            <Pressable 
             // onPress={() => navigation.navigate('Bottom')}
-            onPress={() => promptAsync({showInRecents: true})}
-             _pressed={{bg: '#000000'}} my={3} w= '40%' rounded={10} bg='#ff000f'>
-                GOOGLE
-            </Button>
-            <Pressable onPress={() => navigation.navigate('Register')} mt={4}>
-                <Text>SIGN UP</Text>
+            onPress={() => promptAsync({showInRecents: true})} borderColor='coolGray.300' borderWidth={2} _pressed={{bg: '#000000'}} my={3} w='50%' rounded={5} bg='#ffffff' h={10}>
+                <HStack mt={2} justifyContent='center'>
+                    <Image source={google} w={22} h={22} alt='google'/>
+                    <Text ml={2}>Sign in with Google</Text>
+                </HStack>
             </Pressable>
-        </Box>
+            <Image w={280} h={170} resizeMode='contain' source={banner} alt='banner' mt="4"/>
+            <HStack mt="6" justifyContent="center" alignItems='center'>
+            <Text fontSize="sm" mx={2} >
+              I'm a new Avenger  
+            </Text>
+             <Button _pressed={{bg: '#ff000f'}} bg='black' onPress={() => navigation.navigate('Register')}><Text bold color='white'>Sign up!</Text></Button>
+          </HStack>
+        </Center>
     )
 }

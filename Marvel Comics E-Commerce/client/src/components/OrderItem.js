@@ -10,7 +10,7 @@ export default function OrderItem () {
                 <Box mb={3}>
                     <HStack alignItems='center' bg='white' shadow={1} rounded={10} overflow='hidden'>
                         <Center w='20%'>
-                            <Image source={{uri: 'https://lumiere-a.akamaihd.net/v1/images/maractsminf001_cov_2a89b17b.jpeg?region=0%2C0%2C1844%2C2800'}} alt={item.name} w='full' h={24} resizeMode='contain' />
+                            <Image source={{uri: item.image}} alt={item.name} w='full' h={24} resizeMode='contain' />
                         </Center>
                         <VStack w='60%' px={2}>
                             <Text isTruncated bold>
@@ -22,7 +22,7 @@ export default function OrderItem () {
                         </VStack>
                         <Center>
                             <Button bg='#ff000f' _text={{fontWeight: 'bold', fontSize:'18'}} _pressed={{bg:'#ff000f'}} >
-                                5
+                                1
                             </Button>
                         </Center>
                     </HStack>

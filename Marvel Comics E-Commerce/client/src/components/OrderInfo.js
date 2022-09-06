@@ -19,7 +19,7 @@ export default function OrderInfo ({icon, title, subTitle, text, success, danger
             {success && (
                 <Center py={2} mt={2} rounded={5} w='full' bg='#00000f'>
                     <Text color='white' >
-                     Paid on Jan 12 2021
+                     Unpaid
                     </Text>
                 </Center>
             )}

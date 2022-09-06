@@ -6,18 +6,18 @@ import { FontAwesome } from '@expo/vector-icons'
 
 
 const Swiper = () => (
-    <SwipeListView rightOpenValue={0} previewRowKey='0' previewOpenValue={-20} previewOpenDelay={3000} data={comics.slice(0,3)} renderHiddenItem={hiddenItem} renderItem={renderItem} showsVerticalScrollIndicator={false} />
+    <SwipeListView rightOpenValue={0} previewRowKey='0' previewOpenValue={-20} previewOpenDelay={3000} data={comics.slice(0,2)} renderHiddenItem={hiddenItem} renderItem={renderItem} />
 )
 
 const renderItem = (data) => (
-    <Pressable>
-        <Box ml={6} mb={3}>
-            <HStack alignItems='center' shadow={1} rounded={10} overflow='hidden'>
+    <Pressable mr={3}>
+        <Box ml={3}  mb={3}>
+            <HStack bg='white' alignItems='center' shadow={1} rounded={10} overflow='hidden' >
                 <Center w='25%'>
-                    <Image source={{uri: 'https://lumiere-a.akamaihd.net/v1/images/maractsminf001_cov_2a89b17b.jpeg?region=0%2C0%2C1844%2C2800'}} alt={data.item.name} w='full' h={100} resizeMode='contain'/>
+                    <Image source={{uri: data.item.image}} alt={data.item.name} w='full' my={2} h={100} resizeMode='contain'/>
                 </Center>
                 <VStack w='40%' space={1}>
-                    <Text bold >
+                    <Text bold isTruncated >
                         {data.item.name}
                     </Text>
                     <Text>
@@ -25,7 +25,7 @@ const renderItem = (data) => (
                     </Text>
                 </VStack>
                 <Center>
-                    <Button bg='#ff000f'>5</Button>
+                    <Button ml={9} bg='#ff000f' size='lg'>1</Button>
                 </Center>
             </HStack>
         </Box>
@@ -35,7 +35,7 @@ const renderItem = (data) => (
 
 // HORA 1:47
 const hiddenItem = () => (
-    <Pressable w={50} roundedTopRight={10} roundedBottomRight={10} h='88%' ml='auto' justifyContent='center' bg='#ff000f' >
+    <Pressable w={50}  mr={3} roundedTopRight={10} roundedBottomRight={10} h='88%' ml='auto' justifyContent='center' bg='#ff000f' >
         <Center alignItems='center'space={2}>
             <FontAwesome color='white' name='trash' size={24} />
         </Center>

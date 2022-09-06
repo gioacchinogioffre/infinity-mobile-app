@@ -10,7 +10,7 @@ export default function CartScreen () {
     const navigation= useNavigation() 
 
     return (
-        <Box safeAreaTop >
+        <Box safeAreaTop bg='#ffe5e5' >
             {/* Header */}
             <Center py={5}>
                 <Text bold fontSize={20}>Cart</Text>
@@ -24,7 +24,7 @@ export default function CartScreen () {
                 <Center mt={5}>
                     <HStack rounded={50} justifyContent='space-between' bg='white' shadow={3} w='90%' pl={5} h={45} alignItems='center' mb={5}>
                         <Text>Total</Text>
-                        <Button _text={{fontWeight:'bold'}} _pressed={{bg:'white', _text: {color:'#ff000f'}}} bg='#ff000f' px={10} h={45} rounded={50}>$80</Button>
+                        <Button _text={{fontWeight:'bold'}} _pressed={{bg:'white', _text: {color:'#ff000f'}}} bg='#ff000f' px={10} h={45} rounded={50}>$28.29</Button>
                     </HStack>
                 </Center>
             {/* Checkout */}

@@ -10,7 +10,7 @@ export default function PlaceOrderScreen () {
         <Box flex={1} safeArea pt={6} bg='#ffe6e8'>
             <Box>
                 <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-                    <OrderInfo title='CUSTOMER' subTitle='Jorge' text='jorge@example.com' icon={<FontAwesome name='user' size={30} color='white'/>}/>
+                    <OrderInfo title='CUSTOMER' subTitle='Joe' text='joe@gmail.com' icon={<FontAwesome name='user' size={30} color='white'/>}/>
                     <OrderInfo title='SHIPPING INFO' subTitle='Shipping: Argentina' text='Pay Method: Paypal' icon={<FontAwesome5 name='shipping-fast' size={30} color='white'/>}/>
                     <OrderInfo title='DELIVER TO' subTitle='Address:' text='Av. Siempreviva 123, Buenos Aires' icon={<Ionicons name='location-sharp' size={30} color='white'/>}/>
                 </ScrollView>
