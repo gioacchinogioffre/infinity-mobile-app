@@ -24,3 +24,17 @@ export const updateUser = async (req,res)=>{
     }
     
 }
+
+export const getUserByID = async (req,res)=>{
+    try{
+        const {UserID} = req.params
+        const user = await User.findById(UserID)
+        if(!user){
+            res.status(400).json({message:'user not found'})
+        }
+        res.status(200).json(user)
+    }
+    catch(error){
+        res.status(404).json({message: `${error}`})
+    }
+}

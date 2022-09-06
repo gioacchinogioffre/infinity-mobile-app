@@ -4,11 +4,11 @@ import mongoose from 'mongoose';
 const orderSchema = new  mongoose.Schema({
     number:{
         type: Number,
-        require:true
+        required:true
     },
     paymentMethod:{
         type: String,
-        require:true
+        required:true
     },
     date:{
         type: Date,
@@ -17,7 +17,7 @@ const orderSchema = new  mongoose.Schema({
     },  
     total:{
         type: Number,
-        require:true
+        required:true
     },
     state:{
         type: String,

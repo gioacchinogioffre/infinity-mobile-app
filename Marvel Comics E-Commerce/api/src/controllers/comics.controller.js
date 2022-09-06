@@ -1,13 +1,13 @@
 import Comic from "../models/Comic";
-import Review from "../models/Review";
+
 
 export const postComics = async(req,res)=>{
     try{
-        const {title, price, description, reviews} = req.body
-        if(!title || !price || !description){
+        const {name, price, description} = req.body
+        if(!name || !price || !description){
             return res.status(400).json({ message: "Missing data" });
         }
-        const comicExists = await Comic.findOne({ title : title});
+        const comicExists = await Comic.findOne({ name : name});
         if (comicExists) return res.status(400).json({ message: "Comic already exists" });
 
         const newComic = new Comic(req.body)
@@ -20,7 +20,11 @@ export const postComics = async(req,res)=>{
 
 export const getComics = async(req,res)=>{
     try{
-            const comics = await Comic.find().populate("reviews")
+            const comics = await Comic.find().populate("reviews",{
+                comicID:0,
+                userID:0,
+
+            })
 
         res.status(201).json(comics)
     }catch(error){

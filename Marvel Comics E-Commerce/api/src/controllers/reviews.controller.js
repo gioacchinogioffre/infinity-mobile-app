@@ -9,15 +9,15 @@ export const postReview = async(req,res)=>{
             return res.status(404).json({message: `min 1 - max 5`})
         }
       
-        let comic = await Comic.findOne({id: comicID})
-        let user = await User.findOne({id: userID})
+        let comic = await Comic.findById(comicID)
+        let user = await User.findById(userID)
 
         let newReview = new Review({
             rating,
             date,
             comment,
-            comicID: comic._id,
-            userID: user._id
+            comicID:comic._id,
+            userID:user._id
         })
 
         const reviewSaved = await newReview.save();
@@ -36,7 +36,12 @@ export const postReview = async(req,res)=>{
 
 export const getReviews = async(req,res)=>{
     try{
-            const reviews = await Review.find().populate('userID')
+            const reviews = await Review.find().populate('userID',{
+               roles:0,
+               reviews:0,
+               orders:0,
+               password:0
+            })
 
         res.status(201).json(reviews)
     }catch(error){

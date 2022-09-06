@@ -9,7 +9,7 @@ export const postOrder = async(req,res) =>{
         return res.status(400).json({ message: "Missing data" });
     }
 
-    let user = await User.findOne({id: userID})
+    let user = await User.findById(userID)
 
     let newOrder = new Order({
         number,
@@ -17,7 +17,7 @@ export const postOrder = async(req,res) =>{
         date,
         total,
         state,
-        userID: user._id
+        userID:user._id
     })
 
     const orderSaved = await newOrder.save()
