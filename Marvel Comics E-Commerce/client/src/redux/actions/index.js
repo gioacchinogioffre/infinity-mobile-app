@@ -2,8 +2,11 @@ import axios from 'axios';
 
 export const POST_USER = 'POST_USER'
 export const GET_USER = 'GET_USER'
+export const UPDATE_USER = 'UPDATE_USER'
 export const GET_COMICS = 'GET_COMICS'
 export const GET_REVIEWS = 'GET_REVIEWS'
+
+// USER
 
 export function postUser(user) {
     return async function (dispatch) {
@@ -21,10 +24,10 @@ export function postUser(user) {
     }
 }
 
-export function getUser(email) {
+export function getUser(email, password) {
     return async function (dispatch) {
         try {
-            const user = await axios.get(`/users/${email}`);
+            const user = await axios.get(`/users/${email}`, password);
 
             return dispatch({
                 type: GET_USER,
@@ -36,6 +39,24 @@ export function getUser(email) {
         }
     }
 }
+
+export function updateUser(userId, input) {
+    return async function (dispatch) {
+        try {
+            const user = await axios.put(`/users/${userId}`, input);
+
+            return dispatch({
+                type: UPDATE_USER,
+                payload: user.data
+            })
+        }
+        catch (error) {
+            console.log(error);
+        }
+    }
+}
+
+// COMIC
 
 export function getComics() {
     return async function (dispatch) {
@@ -51,6 +72,8 @@ export function getComics() {
     }
 }
 
+// REVIEW
+
 export function getReviews() {
     return async function (dispatch) {
         try {
@@ -64,3 +87,5 @@ export function getReviews() {
         }
     }
 }
+
+// ORDER
