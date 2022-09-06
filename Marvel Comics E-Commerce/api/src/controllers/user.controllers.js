@@ -30,15 +30,19 @@ export const updateUser = async (req,res)=>{
 export const getUserByEmail = async (req,res)=>{
     try{
         const {email} = req.params
-        const {password} = req.body
+        const {password} = req.query
+        
         const user = await User.findOne({email: email})
         if(!user){
             return res.status(400).json({message:'User not found'})
         }
 
-        const matchPassword = await User.comparePassword(password, user.password)
+        // const matchPassword = await User.comparePassword(password, user.password)
         
-        if(!matchPassword) return res.status(401).json({message:"Invalid Password"})
+        // if(!matchPassword) return res.status(401).json({message:"Invalid Password"})
+        if(user && password !== user.password){
+            return res.status(400).json({message:'Invalid Password'})
+        }
 
         res.status(200).json(user)
     }
