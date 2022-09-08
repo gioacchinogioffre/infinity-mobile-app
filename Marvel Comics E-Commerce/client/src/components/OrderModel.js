@@ -1,13 +1,15 @@
 import React, { useState } from 'react'
 import { Center, Modal, Text, VStack, HStack, Button, Image, Pressable } from 'native-base'
+import { WebView } from 'react-native-webview'
+import { Modal as Jorge } from 'react-native'
 import Buttone from './Buttone'
 import paypal from '../../assets/images/paypal.png'
 import { useNavigation } from '@react-navigation/native'
 
-
 export default function OrderModel () {
 
     const [showModal, setShowModal] = useState(false)
+    const [showPaypal, setShowPaypal] = useState(false)
 
     const OrdersInfo = [
         {
@@ -35,6 +37,9 @@ export default function OrderModel () {
 
     return (
         <Center>
+            <Jorge visible={showPaypal}>
+                <WebView source={{uri: 'http://localhost:4000/paypal'}}/>
+            </Jorge>
             <Buttone width='full' bg='black' mt={1} color='white' onPress={() => setShowModal(true)}>
                 SHOW PAYMENT & TOTAL
             </Buttone>
@@ -55,7 +60,7 @@ export default function OrderModel () {
                         </VStack>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Pressable w='full' justifyContent='center' h={45} onPress={() => setShowModal(false)}>
+                        <Pressable w='full' justifyContent='center' h={45} onPress={() => {setShowModal(false); setShowPaypal(true)}}>
                             <Image source={paypal} alt='paypal' resizeMode='contain' w='full' h={34}/>
                         </Pressable>
                         <Button bg='#ff000f' w='full' h={45} _text={{color:'white'}} onPress={() => {setShowModal(false); navigation.navigate('Home')}} _pressed={{bg:'green'}}>

@@ -61,7 +61,7 @@ export default function HomeSearch () {
                         </HStack>
                         <VStack ml={5} mr={5} my={5}>
                             {prices.map(p => (
-                                <HStack my={0.5}w='100%'justifyContent='space-between'>
+                                <HStack my={0.5} key={p}w='100%'justifyContent='space-between'>
                                     <Checkbox colorScheme="red">{p}</Checkbox>
                                     <Text>(5)</Text>
                                 </HStack>
