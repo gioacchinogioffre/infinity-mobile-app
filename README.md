@@ -8,7 +8,7 @@
 * [Setup](#setup)
 * [Usage](#usage)
 * [Project Status](#project-status)
-* [Acknowledgements](#acknowledgements)
+<!--* [Acknowledgements](#acknowledgements) -->
 * [Contact](#contact)
 <!-- * [License](#license) -->
 
@@ -50,28 +50,28 @@ BACK-END
 <img width="1440" alt="Captura de Pantalla 2022-09-09 a la(s) 15 16 01" src="https://user-images.githubusercontent.com/101685121/189418542-1668103b-52e1-4f68-9cdc-64a6207dca63.png">
 
 ## Setup
-What are the project requirements/dependencies? Where are they listed? A requirements.txt or a Pipfile.lock file perhaps? Where is it located?
-
-Proceed to describe how to install / setup one's local environment / get started with the project.
+Run 'npm install' inside client's and api's folders.
 
 
 ## Usage
-How does one go about using it?
-Provide various use cases and code examples here.
-
-`write-your-code-here`
+Run 'npm start' inside api's folders.
+Run 'expo start' inside client's folders.
 
 
 ## Project Status
 Project is: _in progress_ 
 
-
+<!--
 ## Acknowledgements
 Give credit here.
 - This project was inspired by...
 - This project was based on [this tutorial](https://www.example.com).
 - Many thanks to...
+-->
 
 
 ## Contact
-Created by [@flynerdpl](https://www.flynerd.pl/) - feel free to contact me!
+Created by [Joaquín Gioffre](https://www.linkedin.com/in/joaquingioffre/)
+Front-end developed by Joaquín Gioffre.
+Back-end developed by [Lautaro Bua](https://www.linkedin.com/in/lautarobua-full-stack-developer/)
+Feel free to contact us!
