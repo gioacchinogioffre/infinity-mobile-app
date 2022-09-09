@@ -59,12 +59,16 @@ const updateUser = async (req, res) => {
                 email: email,
                 city: city,
                 country: country,
+                password:password,
                 telephone_number: telephone_number,
                 address: address,
                 postalCode: postalCode,
             }, {where: { email: paramEmail }}
         )
-        response ? res.json({message: "Data updated successfully"}) : res.json({ message: "The data has not been updated" });
+
+        const userUpdated = await User.findOne({ where: { email: paramEmail }});
+        res.status(200).json(userUpdated)
+        // response ? res.json(response) : res.json({ message: "The data has not been updated" });
     } catch (error) {
         res.status(404).json({ message: error.message });
     }
