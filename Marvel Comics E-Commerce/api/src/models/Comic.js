@@ -18,15 +18,15 @@ module.exports = (sequelize) => {
         allowNull: false,
     },
     price: {
-        type: DataTypes.STRING,
+        type: DataTypes.FLOAT,
         allowNull: false
     },
     pageCount:{
       type: DataTypes.INTEGER
     },
     rating : {
-        type: DataTypes.STRING,
-        defaultValue: "3"
+        type: DataTypes.FLOAT,
+        defaultValue: 3
     },
     image:{
         type: DataTypes.STRING(1234)

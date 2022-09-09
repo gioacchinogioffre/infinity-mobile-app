@@ -2,7 +2,11 @@ const {Review, User, Comic} = require('../db')
 
 const postReview = async(req,res)=>{
     try{
-        const {rating, comment, date, comicID, userID } = req.body  // agregar relacion con  usuario
+        const {rating, comment, date, comicID, userID, username } = req.body 
+        
+        if(!rating || !username){
+            return res.status(404).json({message: "Missing data"})
+        }
         if(rating < 1 || rating > 5){
             return res.status(404).json({message: `min 1 - max 5`})
         }

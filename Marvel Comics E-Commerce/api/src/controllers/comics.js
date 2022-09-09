@@ -24,7 +24,7 @@ const getComics = async(req,res)=>{
                 include: [
                     {
                     model:Review,
-                    attributes:["id"],
+                    attributes:["id","date","rating","comment","username"],
                     },
                     {
                     model: Order,
