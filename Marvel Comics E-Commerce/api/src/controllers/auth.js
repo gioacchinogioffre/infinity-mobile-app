@@ -1,4 +1,4 @@
-const { User, Role } = require("../db");
+const { User, Role,Order } = require("../db");
 const jwt =  require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 
@@ -41,11 +41,9 @@ const bcrypt = require('bcrypt');
 }
  const signin = async (req,res)=>{
  const {email, password} = req.body
-    User.findOne({
-        where:{
-            email: email
-        }
-    }).then(user=>{
+    User.findOne({where:{email: email}, include:[Order]})
+    
+    .then(user=>{
         if(!user){
             return res.status(404).json({message: "User not found"})
         }
