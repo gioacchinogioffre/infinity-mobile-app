@@ -1,5 +1,5 @@
 const { User, Role, Review, Order} = require("../db");
-
+const bcrypt = require('bcrypt');
 
 const getUsers = async (req, res) => {
     
@@ -50,7 +50,7 @@ const updateUser = async (req, res) => {
     const userExists = await User.findOne({ where: { email: paramEmail }});
 
     if (!userExists) return res.status(400).json({ message: "User not found"});
-
+    let hashPassword = bcrypt.hashSync(password,10)
     try {
        
         const response = await User.update(
@@ -59,7 +59,7 @@ const updateUser = async (req, res) => {
                 email: email,
                 city: city,
                 country: country,
-                password:password,
+                password:hashPassword,
                 telephone_number: telephone_number,
                 address: address,
                 postalCode: postalCode,
