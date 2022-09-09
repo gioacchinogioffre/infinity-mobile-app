@@ -6,7 +6,8 @@ import {
    GET_COMICS,
    GET_REVIEWS,
    UPDATE_USER,
-   POST_REVIEW
+   POST_REVIEW,
+   POST_ORDER
 } from "../actions"
 
 
@@ -14,7 +15,7 @@ const initialState = {
     user: {},
     reviews: [],
     comics:[],
-    orders: []
+    orders: [],
 }
 
 export default function rootReducer(state = initialState, action) {
@@ -28,15 +29,17 @@ export default function rootReducer(state = initialState, action) {
 
             case UPDATE_USER: return {...state, user: action.payload}
 
-
-        case GET_COMICS: return {...state, comics: action.payload }
+            case GET_COMICS: return {...state, comics: action.payload }
 
         //REVIEWS
             case GET_REVIEWS: return {...state, reviews: action.payload }
 
             case POST_REVIEW: return {...state}
-
         
+        //ORDERS
+
+            case POST_ORDER: return {...state}
+
         // case GET_SEARCH_COMICS: return { ...state, allProductsFiltered: action.payload }
 
         default: return {...state}

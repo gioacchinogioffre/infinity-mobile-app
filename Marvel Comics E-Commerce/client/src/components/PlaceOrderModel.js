@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { Center, Modal, Text, VStack, HStack, Button } from 'native-base'
 import Buttone from './Buttone'
 import { useNavigation } from '@react-navigation/native'
+import { postOrder } from '../redux/actions'
 
 export default function PlacerOrderModel () {
 
     const [showModal, setShowModal] = useState(false)
+    const dispatch = useDispatch()
 
     const OrdersInfo = [
         {
@@ -30,6 +33,19 @@ export default function PlacerOrderModel () {
 
     const navigation= useNavigation() 
 
+    const order = {
+        total: 37.30,
+        comicID: ['12d52d3d-c896-4081-8f76-3973aeb32847', "1223efe8-8403-4b66-89ec-7deb60a4062a"],
+        userID: '3292d6f4-2998-474c-93cf-387a049d323b',
+        paymentMethod: 'paypal',
+    }
+
+    const submitOrder = (order) => {
+        dispatch(postOrder(order))
+        navigation.navigate('Order')
+        setShowModal(false)
+    }
+
     return (
         <Center mb={5}>
             <Buttone width='full' bg='black' mt={5} mb={5}color='white' onPress={() => setShowModal(true)}>
@@ -52,7 +68,7 @@ export default function PlacerOrderModel () {
                         </VStack>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button onPress={() => {navigation.navigate('Order'); setShowModal(false)} } bg='#ff000f' w='full' h={45} _text={{color:'white'}} _pressed={{bg:'green'}}>
+                        <Button onPress={e => submitOrder(order)} bg='#ff000f' w='full' h={45} _text={{color:'white'}} _pressed={{bg:'green'}}>
                             PLACE YOUR ORDER
                         </Button>
                     </Modal.Footer>

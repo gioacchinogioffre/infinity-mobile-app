@@ -12,10 +12,11 @@ export default function Review ({comicId, reviews}) {
     const dispatch = useDispatch()
 
     const [input, setInput] = useState({
-        userID: '631754db6bd660e05bebb533', // cambiar por ID user
+        userID: '874188f2-e2d8-459a-b000-b5a2a5e64600', // cambiar por ID user
         comment: '',
         rating: 3,
-        comicID: comicId
+        comicID: comicId,
+        username: 'Joe'
    })
 
 
@@ -46,7 +47,7 @@ export default function Review ({comicId, reviews}) {
             :
             reviews.map(r => (
                 <Box key={r._id} p={3} mt={5} rounded={5} bg='#e06666' borderColor='black'>
-                    <Heading fontSize={15} color='white'>User Doe</Heading>
+                    <Heading fontSize={15} color='white'>{r.username}</Heading>
                     <Rating value={r.rating} color='white'/>
                     <Text mb={2} my={2} fontSize={12} color='white'>{r.date}</Text>
                     <Message bg='#ffff00'>{r.comment}</Message>
@@ -71,7 +72,7 @@ export default function Review ({comicId, reviews}) {
                     </FormControl>
                     <FormControl>
                      <FormControl.Label _text={{fontWeight: 'bold', color:'black'}}>Comment</FormControl.Label>
-                     <TextArea onChangeText={(value) => handleOnChange({name: 'comment', value: value})}bg='#D3D3D3' h={100} _focus={{bg: '#D3D3D3', borderColor:'#D3D3D3'}} placeholder='The best comic by far..' ></TextArea>
+                     <TextArea onChangeText={(value) => handleOnChange({name: 'comment', value: value})}bg='#D3D3D3' h={100} _focus={{bg: '#D3D3D3', borderColor:'#D3D3D3'}} placeholder='The best comic by far..' value={input.comment}></TextArea>
                     </FormControl>
                     <Buttone onPress={submitReview} bg={'#ff000f'} mt={2} color='white'>SUBMIT</Buttone>
                 </VStack>

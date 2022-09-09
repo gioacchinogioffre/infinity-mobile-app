@@ -32,7 +32,7 @@ export default function ComicDetail ({route}) {
                 </HStack>
                 <Text>{comic.description} </Text>
                 <Buttone bg='#ff000f' color='white' mt={5}>ADD TO CART</Buttone>
-                <Review comicId={comic._id} reviews={comic.reviews}></Review>
+                <Review comicId={comic.id} reviews={comic.reviews}></Review>
             </ScrollView>
         </Box>
     )

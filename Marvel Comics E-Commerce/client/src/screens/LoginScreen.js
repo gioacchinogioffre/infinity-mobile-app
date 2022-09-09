@@ -44,14 +44,15 @@ export default function LoginScreen ({navigation}) {
     password: '',
    })
 
-   const encryptPassword = async (password) => {
-     const salt = await bcrypt.genSalt(10)
-     return await bcrypt.hash(password, salt)
-   }
+//    const encryptPassword = async (password) => {
+//      const salt = await bcrypt.genSalt(10)
+//      return await bcrypt.hash(password, salt)
+//    }
 
    const login = () => {
-        const password = encryptPassword(input.password)
-        // dispatch(getUser(input.email, password))
+
+        // const password = encryptPassword(input.password)
+        dispatch(getUser(input))
         navigation.navigate('Bottom')
    }
 

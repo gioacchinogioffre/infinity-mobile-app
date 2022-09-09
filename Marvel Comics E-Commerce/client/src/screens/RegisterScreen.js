@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import { useDispatch } from 'react-redux'
 import { Text, Center, HStack, VStack, Button, Pressable, Input, Image, Heading} from 'native-base'
 import { MaterialIcons, FontAwesome} from '@expo/vector-icons';
-import { postUser } from '../redux/actions'
+import { postUser, getUser } from '../redux/actions'
 import google from '../../assets/images/google.png'
 import banner from '../../assets/images/avengers1.png'
 import * as Google from 'expo-auth-session/providers/google'
@@ -41,6 +41,7 @@ export default function RegisterScreen ({navigation}) {
     const signUp = () => {
         dispatch(postUser(input))
         navigation.navigate('Bottom')
+        dispatch(getUser({email: input.email, password: input.password}))
     }   
 
     const handleOnChange = ({name, value}) => {

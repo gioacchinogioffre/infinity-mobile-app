@@ -1,44 +1,54 @@
-import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { Box, ScrollView, VStack, FormControl, Input } from 'native-base'
 import Buttone from './Buttone'
 import { updateUser } from '../redux/actions'
 
  
-const inputs = [
-    {
-        label: 'USERNAME',
-        type: 'text',
-        name: 'username'
-    },
-    {
-        label: 'EMAIL',
-        type: 'text',
-        name: 'email'
-    },
-    {
-        label: 'NEW PASSWORD',
-        type: 'password',
-        name: 'password'
-    },
-    {
-        label: 'CONFIRM PASSWORD',
-        type: 'password',
-        name: 'confirmPassword'
-    },
-]
 
 export default function Profile () {
-
+    
     const dispatch = useDispatch()
 
+    const user = useSelector(state => state.user)  
+    
+    useEffect(() => {
+    },[user, inputs])
+    
+    const inputs = [
+        {
+            label: 'USERNAME',
+            type: 'text',
+            name: 'username',
+            value: user.username,
+            disabled: false
+        },
+        {
+            label: 'EMAIL',
+            type: 'text',
+            name: 'email',
+            value: user.email,
+            disabled: true
+        },
+        {
+            label: 'CHANGE PASSWORD',
+            type: 'password',
+            name: 'password',
+            disabled: false
+        },
+        {
+            label: 'CONFIRM PASSWORD',
+            type: 'password',
+            name: 'confirmPassword',
+            disabled: false
+        },
+    ]
     const [input, setInput] = useState({})
 
-    const userId = '6316a76ef01e6a867ee76414' // cambiar por la del usuario cuando hagamos el get user
+    const userId = '874188f2-e2d8-459a-b000-b5a2a5e64600' // cambiar por la del usuario cuando hagamos el get user
 
     const update = () => {
-        dispatch(updateUser(userId, input))
-        setInput({})
+        dispatch(updateUser(user.email, input))
     }   
 
     const handleOnChange = ({name, value}) => {
@@ -60,7 +70,7 @@ export default function Profile () {
                     {inputs.map((i,index) => (
                     <FormControl key={index}>
                         <FormControl.Label _text={{fontWeight: 'bold'}}>{i.label}</FormControl.Label>
-                        <Input onChangeText={(value) => handleOnChange({name: i.name, value: value})}  type={i.type} bg='#ffaaa5' fontSize={17} color='white' _focus={{bg:'#ff686b', borderColor:'black', borderWidth:1.5 }} />
+                        <Input isDisabled={i.disabled} defaultValue={i.value} onChangeText={(value) => handleOnChange({name: i.name, value: value})}  type={i.type} bg='#ffaaa5' fontSize={17} color='white' _focus={{bg:'#ff686b', borderColor:'black', borderWidth:1.5 }} />
                     </FormControl>
                     ))}
                 </VStack>

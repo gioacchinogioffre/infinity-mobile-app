@@ -6,6 +6,7 @@ export const UPDATE_USER = 'UPDATE_USER'
 export const GET_COMICS = 'GET_COMICS'
 export const GET_REVIEWS = 'GET_REVIEWS'
 export const POST_REVIEW = 'POST_REVIEW'
+export const POST_ORDER = 'POST_ORDER'
 
 // USER
 
@@ -25,15 +26,14 @@ export function postUser(user) {
     }
 }
 
-export function getUser(email, password) {
-    console.log(password)
+export function getUser(input) {
     return async function (dispatch) {
         try {
-            const user = await axios.get(`/users/${email}?password=${password}`);
+            const user = await axios.post('/auth/signin', input);
 
             return dispatch({
                 type: GET_USER,
-                payload: user.data
+                payload: user.data.user
             })
         }
         catch (error) {
@@ -42,10 +42,10 @@ export function getUser(email, password) {
     }
 }
 
-export function updateUser(userId, input) {
+export function updateUser(email, input) {
     return async function (dispatch) {
         try {
-            const user = await axios.put(`/users/${userId}`, input);
+            const user = await axios.put(`/users/${email}`, input);
 
             return dispatch({
                 type: UPDATE_USER,
@@ -107,3 +107,19 @@ export function postReview(review) {
 }
 
 // ORDER
+
+export function postOrder(order) {
+    return async function (dispatch) {
+        try {
+            const newOrder = await axios.post("/orders", order);
+
+            return dispatch({
+                type: POST_ORDER,
+                payload: newOrder.data
+            })
+        }
+        catch (error) {
+            console.log(error);
+        }
+    }
+}

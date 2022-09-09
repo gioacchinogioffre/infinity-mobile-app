@@ -1,48 +1,54 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Box, Text, Center, ScrollView, VStack, FormControl, Input} from 'native-base'
 import Buttone from '../components/Buttone'
 import { useNavigation } from '@react-navigation/native'
 import { updateUser } from '../redux/actions'
 
-const inputs = [
-    {
-        label:'CITY',
-        type: 'text',
-        name: 'city'
-    },
-    {
-        label:'COUNTRY',
-        type: 'text',
-        name: 'country'
-
-    },
-    {
-        label:'ADDRESS',
-        type: 'text',
-        name: 'address'
-
-    },
-    {
-        label:'POSTAL CODE',
-        type: 'text',
-        name: 'postalCode'  
-    },
-]
 
 export default function ShippingScreen () {
-
+    
     const navigation= useNavigation() 
-
+    
     const dispatch = useDispatch()
-
+    const user = useSelector(state => state.user)  
+    const inputs = [
+        {
+            label:'CITY',
+            type: 'text',
+            name: 'city',
+            value: user.city
+        },
+        {
+            label:'COUNTRY',
+            type: 'text',
+            name: 'country',
+            value: user.country
+        },
+        {
+            label:'ADDRESS',
+            type: 'text',
+            name: 'address',
+            value: user.address    
+        },
+        {
+            label:'POSTAL CODE',
+            type: 'text',
+            name: 'postalCode',
+            value: user.postalCode
+        },
+        {
+            label:'TELEPHONE NUMER',
+            type: 'text',
+            name: 'telephone_number',
+            value: user.telephone_number
+        },
+    ]
+    
     const [input, setInput] = useState({})
 
-    const userId = '6316a76ef01e6a867ee76414' // cambiar por la del usuario cuando hagamos el get user
-
     const update = () => {
-        dispatch(updateUser(userId, input))
-        setInput({})
+        dispatch(updateUser(user.email, input))
         navigation.navigate('Checkout')
     }   
 
@@ -71,7 +77,7 @@ export default function ShippingScreen () {
                         {inputs.map((i, index) => (
                         <FormControl key={index}>
                             <FormControl.Label>{i.label}</FormControl.Label>
-                            <Input onChangeText={(value) => handleOnChange({name: i.name, value: value})} bg='#e06666' color='white' _focus={{bg:'#e06666', borderColor:'black'}} fontSize={15} py={3}></Input>
+                            <Input defaultValue={i.value} onChangeText={(value) => handleOnChange({name: i.name, value: value})} bg='#e06666' color='white' _focus={{bg:'#e06666', borderColor:'black'}} fontSize={15} py={3}></Input>
                         </FormControl>
                         ))}
                      <Buttone onPress={update} color='white' bg='black' mt={5}>CONTINUE</Buttone>
