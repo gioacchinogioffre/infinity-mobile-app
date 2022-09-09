@@ -18,7 +18,8 @@ module.exports = (sequelize) => {
         allowNull: false
     },
     state:{
-        type: DataTypes.ENUM("paid", "pending")
+        type: DataTypes.STRING,
+        defaultValue:"pending"
     },
     date : {
         type: DataTypes.DATEONLY,
