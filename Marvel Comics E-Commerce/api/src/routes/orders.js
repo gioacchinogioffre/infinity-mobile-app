@@ -4,6 +4,6 @@ const {postOrder, getOrders,updateOrder} = require("../controllers/orders");
 
 router.post("/", postOrder);
 router.get("/", getOrders);
-router.put("/:id", getOrders);
+router.put("/:id", updateOrder);
 
 module.exports = router;
