@@ -15,6 +15,7 @@
 
 ## Technologies Used
 FRONT-END
+- javascript
 - expo
 - react-native
 - native-base
@@ -22,6 +23,7 @@ FRONT-END
 - redux
 
 BACK-END
+- javascript
 - express
 - nodejs
 - postgreSQL
