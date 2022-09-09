@@ -1,0 +1,144 @@
+
+### Comic 2
+POST  http://localhost:4000/comics
+Content-Type: application/json
+
+{
+    "name": "Marvel Avengers The Ultimate Character Guide New Edition",
+    "description": "Meet the world's mightiest Super Hero team: The Avengers! This comprehensive guide to the characters of Earth’s mightiest Super Hero team features in-depth profiles on every Avenger – their powers, their allies, their key storylines, and their foes. Features fan-favorites including Iron-Man, Spider-Man, Hulk, Black Widow, Captain America, Thor, Black Panther, and Captain Marvel. These are Marvel’s mighty Avengers.",
+    "price": 10.29,
+    "image":"https://res.cloudinary.com/joaco/image/upload/v1662495894/marvel-comics-app/2_p9riqd.png",
+    "rating": 5,
+    "pageCount": 208,
+    "language":"en",
+    "stock": 8,
+    "numReviews":25
+}
+
+### Comic 3
+POST  http://localhost:4000/comics
+Content-Type: application/json
+
+{
+    "name": "Avengers Volume 1: Avengers World",
+    "description": "The greatest heroes in comics, together as one unbeatable team! The Avengers go large, expanding their roster and sphere of influence to a global and even interplanetary level. When Captain America puts out his call, who will respond? The answers will surprise you! The Avengers' first mission takes them to Mars, but the secrets of the Garden lead right back to Earth's Savage Land! It all leads up to the secret origin of the universe itself, as Captain Universe races to decipher the code hidden in the Avengers' recent adventures! Jonathan Hickman takes Earth's Mightiest Heroes to the next level with big threats, big ideas and big idealism. These are the Avengers NOW!.",
+    "price": 18,
+    "image":"https://res.cloudinary.com/joaco/image/upload/v1662495894/marvel-comics-app/3_balb3h.png",
+    "rating": 4,
+    "pageCount": 152,
+    "language":"en",
+    "stock": 12,
+    "numReviews":7
+}
+
+### Comic 4
+POST  http://localhost:4000/comics
+Content-Type: application/json
+
+{
+    "name": "Secret Wars",
+    "description": "The Marvel multiverse is collapsing! Universes are colliding and realities are being wiped out! Earth 616 is destroyed as it merges with numerous other alternative Earths, creating... Battleworld! Who will survive?!! What will survive?!! Collecting Secret Wars #1-9 and material from Free comic Book Day 2015: Secret Wars..",
+    "price": 22.48,
+    "image":"https://res.cloudinary.com/joaco/image/upload/v1662495896/marvel-comics-app/4_icmgdh.png",
+    "rating": 4.5,
+    "pageCount": 312,
+    "language":"en",
+    "stock": 5,
+    "numReviews":9
+}
+
+### Comic 5
+POST  http://localhost:4000/comics
+Content-Type: application/json
+
+{
+    "name": "Infinity",
+    "description": "To save the world from ever-greater dangers, the Avengers got bigger. Yet when the oldest race in the universe marks Earth for destruction, it's time for Captain America to think grander still. As the most powerful Avengers team ever assembled heads into space to join an intergalactic alliance against the ancient Builders, an old enemy deems their home unprotected. Thanos, the Mad Titan, unleashes his forces on Earth in the latest chapter of his endless quest for death. But even a world without Avengers has its defenders. Among them, the secret cabal of history-shapers known as the Illuminati - a group riven with internal confl ict already confronting another planet-ending crisis. As Earth's Mightiest Heroes wage war on multiple fronts, their battle for Infinity threatens to descend into Inhumanity.",
+    "price": 36.99,
+    "image":"https://res.cloudinary.com/joaco/image/upload/v1662495890/marvel-comics-app/5_ntkodo.png",
+    "rating": 4.5,
+    "pageCount": 592,
+    "language":"en",
+    "stock": 2,
+    "numReviews":22
+}
+
+### Comic 6
+POST  http://localhost:4000/comics
+Content-Type: application/json
+
+{
+    "name": "Avengers By Jonathan Hickman: The Complete Collection Vol. 5",
+    "description": "Jonathan Hickman’s acclaimed run reaches its epic conclusion as time runs out for the Avengers — and the world! For Earth’s Mightiest Heroes and the Illuminati, it’s all been building to this. One by one, the realities of the multiverse have collided and been destroyed, leaving the Marvel Universe as one of the last dimensions standing. Now, the saga jumps forward eight months — to the day of the Final Incursion! After the revelation of the Illuminati’s desperate, world-shattering actions, the Avengers are fragmented. While one group seeks out the Illuminati for a confrontation, another takes the fight to the vicious new Cabal! But what has become of Tony Stark and Doctor Strange? Will all the battles they’ve endured — and the sacrifices they’ve made — prepare the Avengers for the inevitable end of everything?.",
+    "price": 40.49,
+    "image":"https://res.cloudinary.com/joaco/image/upload/v1662495886/marvel-comics-app/6_mzq1r6.png",
+    "rating": 4.5,
+    "pageCount": 528,
+    "language":"en",
+    "stock": 0,
+    "numReviews": 47
+}
+
+### Comic 7
+POST  http://localhost:4000/comics
+Content-Type: application/json
+
+{
+    "name": "Infinity War",
+    "description": "After Adam Warlock's return in Infinity Gauntlet, his worse half the Magus wasn't far behind! The struggle for ultimate power over the universe continues when a stockpile of evil twins overwhelm the Fantastic Four, Avengers, X-Men, New Warriors, Alpha Flight and more! Will the universe be saved, destroyed... or both? Collects Infinity War #1-6, Warlock and the Infinity Watch #7-10 and Marvel Comics Presents #108-111..",
+    "price": 17.69,
+    "image":"https://res.cloudinary.com/joaco/image/upload/v1662495899/marvel-comics-app/7_ojydtg.png",
+    "rating": 5,
+    "pageCount": 400,
+    "language":"en",
+    "stock": 2,
+    "numReviews":36
+}
+
+### Comic 8
+POST  http://localhost:4000/comics
+Content-Type: application/json
+
+{
+    "name": "Infinity Gauntlet",
+    "description": "It's the Avengers, the New Warriors, the X-Men and more against the omnipotent Eternal, Thanos! The Mad Titan has become the most powerful being in the universe, and enslavement or destruction may be the only choices he gives it! The successive Starlin sagas that shook space and time start here!",
+    "price": 21.49,
+    "image":"https://res.cloudinary.com/joaco/image/upload/v1662495906/marvel-comics-app/8_tursfz.png",
+    "rating": 4.5,
+    "pageCount": 256,
+    "language":"en",
+     "stock": 4,
+    "numReviews":4
+}
+
+### Comic 9
+POST  http://localhost:4000/comics
+Content-Type: application/json
+
+{
+    "name": "Avengers By Jonathan Hickman Omnibus Vol. 2 (Avengers Omnibus, 2)",
+    "description": "Jonathan Hickman’s epic Avengers run builds to the end of all things! A runaway planet is on a collision course with Earth. A.I.M. brings a corrupt version of the Avengers into the Marvel Universe. And the collision of the Avengers and the Illuminati is imminent! But as teammate faces teammate, the Time Gem takes the Avengers on a peril-filled journey into days-to-come — ultimately sending Captain America 50,000 years into the future, to witness a true Avengers world! Meanwhile, as the Incursion crisis worsens, the Illuminati struggle with the weight of the burden they have shouldered. Their desperate, world-shattering actions will leave the Avengers at each other’s throats — and give rise to the Cabal! And as, one by one, the realities of the multiverse collide, time runs out for everyone!",
+    "price": 125,
+    "image":"https://res.cloudinary.com/joaco/image/upload/v1662495884/marvel-comics-app/9_ugjph4.png",
+    "rating": 4,
+    "pageCount": 1088,
+    "language":"en",
+    "stock": 7,
+    "numReviews": 3
+}
+
+### Comic 10
+POST  http://localhost:4000/comics
+Content-Type: application/json
+
+{
+    "name": "AVENGERS PHOENIX FORCE",
+    "description": "Who will be the new Phoenix?! The planet-spraying cosmic bird known as the Phoenix Force has returned, and the Avengers are summoned for a global battle for ultimate power! In the distant past of the year one million B.C., the only crime of a young woman was to be born with red hair, and her fate will change the history of mankind forever!",
+    "price": 5,
+    "image":"https://res.cloudinary.com/joaco/image/upload/v1662495886/marvel-comics-app/10_todpwt.png",
+    "rating": 3.5,
+    "pageCount": 180,
+    "language":"en-es",
+    "stock": 20,
+    "numReviews":9
+}
