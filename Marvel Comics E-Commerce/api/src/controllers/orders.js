@@ -8,7 +8,7 @@ const postOrder = async(req,res) =>{
         return res.status(400).json({ message: "Missing data" });
     }
         const order = await Order.create(req.body)
-        await order.addComics(comicID)
+        await order.addComic(comicID)
         order.setUser(userID);
 
     res.status(201).json(order)
