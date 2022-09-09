@@ -45,12 +45,15 @@ const getUserByEmail = async (req, res) => {
 
 const updateUser = async (req, res) => { 
     const { email: paramEmail } = req.params;
-    const { username, email, password, city, country, telephone_number, address, postalCode,} = req.body;
+    let { username, email, password, city, country, telephone_number, address, postalCode,} = req.body;
     
     const userExists = await User.findOne({ where: { email: paramEmail }});
 
     if (!userExists) return res.status(400).json({ message: "User not found"});
-    let hashPassword = bcrypt.hashSync(password,10)
+
+    if(password){
+        password = bcrypt.hashSync(password,10)
+    }
     try {
        
         const response = await User.update(
@@ -59,7 +62,7 @@ const updateUser = async (req, res) => {
                 email: email,
                 city: city,
                 country: country,
-                password:hashPassword,
+                password:password,
                 telephone_number: telephone_number,
                 address: address,
                 postalCode: postalCode,
