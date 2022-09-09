@@ -3,8 +3,8 @@ const {Order,Comic, User} = require('../db');
 const postOrder = async(req,res) =>{
 
     try{
-    const {number,paymentMethod,date,total,state, comicId, userID} = req.body
-    if(!number || !paymentMethod || !total || !comicId){
+    const {paymentMethod,date,total,state, comicId, userID} = req.body
+    if(!paymentMethod || !total || !comicId){
         return res.status(400).json({ message: "Missing data" });
     }
         const order = await Order.create(req.body)

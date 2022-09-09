@@ -5,16 +5,12 @@ module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define('order', {
     id: {
-        type: DataTypes.UUID,
-        defaultValue: DataTypes.UUIDV4,
-        primaryKey: true
-    },
-    number: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        primaryKey: true,
+        autoIncrement: true
     },
     total: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.FLOAT,
         allowNull: false
     },
     paymentMethod: {
@@ -22,7 +18,7 @@ module.exports = (sequelize) => {
         allowNull: false
     },
     state:{
-        type: DataTypes.ENUM("paid", "unpaid")
+        type: DataTypes.ENUM("paid", "pending")
     },
     date : {
         type: DataTypes.DATEONLY,
