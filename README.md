@@ -42,7 +42,6 @@ BACK-END
 <img width="1440" alt="Captura de Pantalla 2022-09-09 a la(s) 15 14 03" src="https://user-images.githubusercontent.com/101685121/189417881-4d73d0a1-efd7-433a-a8be-094d6b77d69c.png">
 <img width="1440" alt="Captura de Pantalla 2022-09-09 a la(s) 15 14 31" src="https://user-images.githubusercontent.com/101685121/189418015-d32073f7-8c04-4203-84cf-ef8d35187551.png">
 <img widt<img width="1440" alt="Captura de Pantalla 2022-09-09 a la(s) 15 15 00" src="https://user-images.githubusercontent.com/101685121/189418087-92165244-57b7-4e2a-ad78-108580ee4ae2.png">
-h="1440" alt="Captura de Pantalla 2022-09-09 a la(s) 15 14 48" src="https://user-images.githubusercontent.com/101685121/189418041-9dac2815-91ec-4569-b209-9fd48cda3e0a.png">
 <img width="1440" alt="Captura de Pantalla 2022-09-09 a la(s) 15 15 10" src="https://user-images.githubusercontent.com/101685121/189418104-da977a96-59d6-4a96-ac86-ce784f195dfb.png">
 <img width="1440" alt="Captura de Pantalla 2022-09-09 a la(s) 15 15 10" src="https://user-images.githubusercontent.com/101685121/189418174-74579be5-efed-4a6b-a921-f728a6700c5c.png">
 <img width="1440" alt="Captura de Pantalla 2022-09-09 a la(s) 15 15 16" src="https://user-images.githubusercontent.com/101685121/189418196-b146c878-2392-4448-8348-a05171772e34.png">
