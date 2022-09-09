@@ -8,8 +8,8 @@
 * [Setup](#setup)
 * [Usage](#usage)
 * [Project Status](#project-status)
+* * [Contact](#contact)
 <!--* [Acknowledgements](#acknowledgements) -->
-* [Contact](#contact)
 <!-- * [License](#license) -->
 
 
