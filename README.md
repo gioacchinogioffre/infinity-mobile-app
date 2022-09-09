@@ -55,6 +55,7 @@ Run 'npm install' inside client's and api's folders.
 
 ## Usage
 Run 'npm start' inside api's folders.
+<br>
 Run 'expo start' inside client's folders.
 
 
@@ -71,7 +72,7 @@ Give credit here.
 
 
 ## Contact
-Created by [Joaquín Gioffre](https://www.linkedin.com/in/joaquingioffre/)
-Front-end developed by Joaquín Gioffre.
-Back-end developed by [Lautaro Bua](https://www.linkedin.com/in/lautarobua-full-stack-developer/)
+Created by [Joaquín Gioffre](https://www.linkedin.com/in/joaquingioffre/) <br>
+Front-end developed by Joaquín Gioffre. <br>
+Back-end developed by [Lautaro Bua](https://www.linkedin.com/in/lautarobua-full-stack-developer/) <br>
 Feel free to contact us!
