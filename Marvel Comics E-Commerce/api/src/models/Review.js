@@ -1,27 +1,25 @@
-import {Schema, model} from 'mongoose'
-import mongoose from 'mongoose';
-
-const reviewSchema = new mongoose.Schema({
-    date:{
-        type: Date,
-        default:Date.now
+const { DataTypes } = require('sequelize');
+// Exportamos una funcion que define el modelo
+// Luego le injectamos la conexion a sequelize.
+module.exports = (sequelize) => {
+  // defino el modelo
+  sequelize.define('review', {
+    id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
+    },
+    date: {
+        type: DataTypes.DATEONLY,
+        defaultValue: DataTypes.NOW
     },
     rating:{
-        type: Number,
-        min: 1,
-        max: 5,
-        required: true
+        type: DataTypes.INTEGER,
+        allowNull: false
     },
-    comment: {
-        type: String
-    },
-
-    comicID:{ type: mongoose.Schema.Types.ObjectId, ref:"Comic"},
-    userID: { type: mongoose.Schema.Types.ObjectId, ref:"User"}
-
-},{
-    timestamps: false,
-    versionKey:false
-})
-
-export default model("Review", reviewSchema);
+    comment:{
+        type:DataTypes.STRING(2000),
+        
+    }
+  }, {timestamps: false});
+};

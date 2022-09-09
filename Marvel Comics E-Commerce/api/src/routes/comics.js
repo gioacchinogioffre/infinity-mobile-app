@@ -1,10 +1,10 @@
-import { Router } from "express";
-const router = Router()
-import {getComics, postComics,getComicByID,updateComicByID,deleteComicByID} from '../controllers/comics.controller';
-router.get('/', getComics)
-router.post('/',postComics)
-router.get('/:ComicID', getComicByID)
-router.put('/:ComicID', updateComicByID)
-router.delete('/:ComicID', deleteComicByID)
+const express = require('express');
+const router = express.Router();
+const {getComicByID, getComics, postComics, updateComic} = require("../controllers/comics"); 
 
-export default router
+router.post("/", postComics);
+router.get("/", getComics);
+router.get("/:id", getComicByID);
+router.put("/:id", updateComic);
+
+module.exports = router;

@@ -1,7 +1,8 @@
-import { Router } from "express";
-const router = Router()
-import {postOrder, getOrders} from '../controllers/orders.controllers';
-router.post('/',postOrder)
-router.get('/', getOrders)
+const express = require('express');
+const router = express.Router();
+const {postOrder, getOrders} = require("../controllers/orders"); 
 
-export default router
+router.post("/", postOrder);
+router.get("/", getOrders);
+
+module.exports = router;

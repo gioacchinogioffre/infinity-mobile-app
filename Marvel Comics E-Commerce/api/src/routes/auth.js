@@ -1,8 +1,9 @@
-import { Router } from "express";
-const router = Router()
-import {signin, signup} from "../controllers/auth.controllers"
-import {verifySignUP} from '../middlewares'
-router.post('/signup', [verifySignUP.checkUserExist, verifySignUP.checkRolesExisted], signup)
-router.post('/signin', signin)
+const express = require('express');
+const {signin, signup} = require('../controllers/auth');
 
-export default router
+const router = express.Router();
+
+router.post("/signup", signup);
+router.post("/signin", signin);
+
+module.exports = router;

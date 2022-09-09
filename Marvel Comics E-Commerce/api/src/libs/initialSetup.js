@@ -1,16 +1,17 @@
-import Role from '../models/Role'
-export const createRole = async ()=>{
-try{
+const {Role} = require('../db')
 
-    const count = await Role.estimatedDocumentCount()
-    if(count > 0) return;
-    const values = await Promise.all([
-        new Role({name: 'user'}).save(),
-        new Role({name: 'moderator'}).save(),
-        new Role({name: 'admin'}).save()
-    ])
-    console.log(values)
-}catch(error){
-    console.log(error)
+const  createRoles = async (req, res)=>{
+    try{
+        const values = await Promise.all([
+            Role.create({name:'user'}),
+            Role.create({name:'admin'})
+        ])
+     
+    }catch(error){
+        res.status(404).json({message: `${error}`})
+    }
 }
+
+module.exports = {
+    createRoles
 }

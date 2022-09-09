@@ -1,34 +1,32 @@
-import { model} from "mongoose";
-import mongoose from 'mongoose';
-
-const orderSchema = new  mongoose.Schema({
-    number:{
-        type: Number,
-        required:true
+const { DataTypes } = require('sequelize');
+// Exportamos una funcion que define el modelo
+// Luego le injectamos la conexion a sequelize.
+module.exports = (sequelize) => {
+  // defino el modelo
+  sequelize.define('order', {
+    id: {
+        type: DataTypes.UUID,
+        defaultValue: DataTypes.UUIDV4,
+        primaryKey: true
     },
-    paymentMethod:{
-        type: String,
-        required:true
+    number: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
     },
-    date:{
-        type: Date,
-        default: Date.now
-        
-    },  
-    total:{
-        type: Number,
-        required:true
+    total: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
+    paymentMethod: {
+        type: DataTypes.ENUM("paypal", "mercadopago"),
+        allowNull: false
     },
     state:{
-        type: String,
-        enum: ['paid','unpaid'],
+        type: DataTypes.ENUM("paid", "unpaid")
     },
-
-    userID: { type: mongoose.Schema.Types.ObjectId, ref:"User"}
-    
-},{
-    timestamps: false,
-    versionKey:false
-})
-
-export default model('Order', orderSchema);
+    date : {
+        type: DataTypes.DATEONLY,
+        defaultValue: DataTypes.NOW
+    }
+  }, {timestamps: false});
+};

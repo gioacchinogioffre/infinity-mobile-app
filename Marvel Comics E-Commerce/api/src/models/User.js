@@ -1,51 +1,45 @@
-import {Schema, model} from 'mongoose';
-import mongoose from 'mongoose';
-import bcrypt from 'bcryptjs';
-
-const userSchema = new mongoose.Schema({
-    username:{
-        type:String,
-        unique: true,
-        required:true
+const bcrypt = require('bcryptjs');
+const { DataTypes } = require('sequelize');
+// Exportamos una funcion que define el modelo
+// Luego le injectamos la conexion a sequelize.
+module.exports = (sequelize) => {
+  // defino el modelo
+  sequelize.define('user', {
+    id: {
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
+      primaryKey: true
     },
-    email:{
-        type:String,
-        unique: true,
-        required:true
+    username: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true 
     },
-    password:{
-        type:String,
-        required: true    
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true
     },
-    city:{
-        type:String,
+    password: {
+      type: DataTypes.STRING,
+      allowNull:false
     },
-    country:{
-        type:String
+    city: {
+      type: DataTypes.STRING
     },
-    address:{
-        type:String
+    country: {
+      type: DataTypes.STRING
     },
-    postalCode:{
-        type:String
+    address: {
+      type: DataTypes.STRING
     },
-    //relacion de 1:n (uno a muchos)
-    roles:[{type: mongoose.Schema.Types.ObjectId,  ref:"Role",}],
-
-    reviews:[{type: mongoose.Schema.Types.ObjectId, ref:"Review",}],
-
-    orders:[{type: mongoose.Schema.Types.ObjectId, ref:"Order",}]
-},{
-    timestamps:false,
-    versionKey:false
-})
-
-userSchema.statics.encryptPassword = async (password)=>{
-    const salt  = await bcrypt.genSalt(10)
-    return await bcrypt.hash(password, salt)
-}
-userSchema.statics.comparePassword = async(password, recivedPassword)=>{
-    return await bcrypt.compare(password,recivedPassword)
-}
-
-export default model("User", userSchema); 
+    postalCode: {
+      type: DataTypes.STRING
+    },
+    telephone_number: {
+      type: DataTypes.STRING,
+    }
+  }, {
+    timestamps: false,
+  });
+};

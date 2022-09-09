@@ -1,44 +1,46 @@
-import { model, Schema } from "mongoose";
-import mongoose from 'mongoose';
-
-const comicSchema = new  mongoose.Schema({
-    name:{
-        type: String,
-        required:true
+const { DataTypes } = require('sequelize');
+// Exportamos una funcion que define el modelo
+// Luego le injectamos la conexion a sequelize.
+module.exports = (sequelize) => {
+  // defino el modelo
+  sequelize.define('comic', {
+    id: {
+        type: DataTypes.UUID,
+        defaultValue: DataTypes.UUIDV4,
+        primaryKey: true
     },
-    description:{
-        type: String,
-        required:true
+    name: {
+        type: DataTypes.STRING(1234),
+        allowNull: false,
     },
-    price:{
-        type: Number,
-        required:true
-    },  
+    description: {
+        type: DataTypes.STRING(1234),
+        allowNull: false,
+    },
+    price: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
     pageCount:{
-        type: Number
+      type: DataTypes.INTEGER
     },
-    rating:{
-        type: Number,
-        default: 3
+    rating : {
+        type: DataTypes.STRING,
+        defaultValue: "3"
     },
     image:{
-        type:String
+        type: DataTypes.STRING(1234)
     },
     language:{
-        type: String
+        type: DataTypes.STRING
     },
     numReviews:{
-        type: Number,
-        default: 0
+        type: DataTypes.INTEGER,
+        defaultValue: 0
     },
     stock:{
-        type: Number,
-        default: 0
-    },
-    reviews:[{type: mongoose.Schema.Types.ObjectId,ref:"Review",}]
-},{
-    timestamps: false,
-    versionKey:false
-})
-
-export default model('Comic', comicSchema);
+        type: DataTypes.INTEGER,
+        defaultValue: 0
+    }
+  }, {timestamps: false});
+};
