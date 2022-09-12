@@ -9,7 +9,11 @@ import { useStateContext } from '../contexts/ContextProvider'
 
 
 const Sidebar = () => {
-  const { activeMenu, setActiveMenu } = useStateContext()
+  const { activeMenu, setActiveMenu, screenSize } = useStateContext()
+
+  const handleCloseSideBar = () => {
+    if (activeMenu && screenSize <= 900) setActiveMenu(false)
+  } // seteamos funcion para que se cierre el menu cuando clickeamos en una de las navegaciones estando en mobile para no tener que cerrarlo a mano.
 
   const activeLink = 'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-white text-md m-2 bg-red-500 '
   const normalLink = 'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-md text-gray-700 dark:text-gray-200 dark:hover:text-black hover:bg-red-400 hover:text-white m-2'
@@ -20,7 +24,7 @@ const Sidebar = () => {
         activeMenu && 
         <>
           <div className='flex justify-between items-center'>
-            <Link to='/' onClick={()=> setActiveMenu(false)} className='items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900'>
+            <Link to='/' onClick={handleCloseSideBar} className='items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900'>
               <SiShopware/> <span>Infinity</span>
             </Link>
             <TooltipComponent content='Menu' position='BottomCenter'>
@@ -34,7 +38,7 @@ const Sidebar = () => {
               <div key={l.title}>
                 <p className='text-gray-400 m-3 mt-4 uppercase'>{l.title}</p>
                 {l.links.map(link => (
-                  <NavLink key={link.name} to={`/${link.name}`} onClick={()=>{}} className={({ isActive })=> isActive ? activeLink : normalLink}>
+                  <NavLink key={link.name} to={`/${link.name}`} onClick={handleCloseSideBar} className={({ isActive })=> isActive ? activeLink : normalLink}>
                     <span className='capitalize'>{link.name}</span>
                   </NavLink>
                 ))}
