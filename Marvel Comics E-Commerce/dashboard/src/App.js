@@ -5,6 +5,7 @@ import { TooltipComponent } from '@syncfusion/ej2-react-popups'
 import { Footer, Sidebar, ThemeSettings, Navbar } from './components'
 import { Ecommerce, Orders, Calendar, Employees, Stacked, Pyramid, Customers, Kanban, Area, Bar, Pie, ColorPicker, ColorMapping, Editor, Line, Financial } from './pages'
 import './App.css'
+import { useStateContext } from './contexts/ContextProvider'
 
 
 /*SETTINGS BUTTON
@@ -12,8 +13,7 @@ Le damos inline style en el color del background para ir cambiando los theme col
 */
 
 const App = () => {
-  const activeMenu=true
-
+  const { activeMenu } = useStateContext()
 
   return (
     <div>
