@@ -36,7 +36,7 @@ const updateOrder = async (req,res)=>{
     try{
         const {id} = req.params
         const {total, paymentMethod, state} = req.body
-        const updatedOrder = await Comic.update({
+        const updatedOrder = await Order.update({
             total: total,
             paymentMethod: paymentMethod,
             state: state
@@ -44,7 +44,6 @@ const updateOrder = async (req,res)=>{
 
         const orderUpdated = await Order.findOne({ where: { id: id }});
         res.status(200).json(orderUpdated)
-        
     }catch(error){
         res.status(404).json({message: error.message})
     }
