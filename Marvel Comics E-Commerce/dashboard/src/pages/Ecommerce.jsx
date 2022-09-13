@@ -12,7 +12,7 @@ const Ecommerce = () => {
 
   return (
     <div className='mt-12'>
-        <div className='bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-50 rounded-xl w-full p-5 pt-9 m-3 bg-hero-pattern bg-no-repeat bg-cover bg-center'>
+        <div className='bg-white dark:text-black dark:bg-secondary-dark-bg h-50 rounded-xl w-full p-5 pt-9 m-3 bg-hero-pattern bg-no-repeat bg-cover bg-center'>
           <div className='flex justify-between items-center'>
             <div>
               <p className='font-bold text-gray-400'>Earnings</p>
@@ -28,8 +28,8 @@ const Ecommerce = () => {
         <div className='flex m-3 flex-wrap justify-between gap-6 '>
           {
             earningData.map(item => (
-              <div key={item.title} className='bg-white dark:text-gray-200 dark:bg-secondary-dark-bg md:w-56 p-4 pt-9 rounded-2xl'>
-                <button className='rounded-full hover:drop-shadow-xl cursor-pointer justify-center items-center'>
+              <div key={item.title} className='bg-white dark:text-gray-200 dark:bg-secondary-dark-bg md:w-56 p-4 pt-9 rounded-2xl items-center justify-center'>
+                <button className='rounded-full hover:drop-shadow-xl cursor-pointer  items-center'>
                   <img src={item.image} alt='image' className='rounded-full w-14 h-14 hover:drop-shadow-xl cursor-pointer' />
                 </button>
                 <p>
@@ -44,7 +44,7 @@ const Ecommerce = () => {
       </div>
 
       <div className='flex gap-10 flex-wrap justify-center'>
-        <div className='bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl md:w-780 w-full' >
+        <div className='bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-5 p-4 rounded-2xl md:w-780 w-full' >
           <div className='flex justify-between'>
               <p className='font-semibold text-xl'>
                   Revenue Updates
@@ -70,11 +70,11 @@ const Ecommerce = () => {
           </div>
 
         </div>
-        <div className='mt-10 flex gap-10 flex-wrap justify-center'>
+        <div className='flex gap-10 flex-wrap justify-center'>
           <div className='border-r-1 border-color m-4 pr-10'>
               <div>
                 <p>
-                  <span className='text-3xl font-semibold'>
+                  <span className='text-3xl font-semibold dark:text-white'>
                     $93.456,92
                   </span>
                   <span className='p-1.5 hover:drop-shadow-xl rounded-md text-white bg-green-500 ml-3 text-xs'>
@@ -87,7 +87,7 @@ const Ecommerce = () => {
               </div>
               <div className='mt-8'>
                 <p>
-                  <span className='text-3xl font-semibold'>
+                  <span className='text-3xl font-semibold dark:text-white'>
                     $48.345,92
                   </span>
                 </p>
@@ -103,7 +103,7 @@ const Ecommerce = () => {
               </div>
           </div>
           <div>
-             <Stacked width='320px' height='360px'  />
+             <Stacked width='320px' height='200px'  />
           </div>
         </div>
       </div>

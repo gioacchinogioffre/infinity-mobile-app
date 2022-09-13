@@ -39,6 +39,7 @@ const ThemeSettings = () => {
                 <div className='relative mt-2 cursor-pointer flex gap-5 items-center'>
                   <button type='button' className='h-10 w-10 rounded-full cursor-pointer' style={{backgroundColor: color.color}} onClick={()=> setColor(color.color)}>
                     <BsCheck className={`ml-2 text-2xl text-white ${color.color === currentColor ? 'block' : 'hidden'}`}/>
+                    <img src={color.image} alt='color'/>
                   </button>
                 </div>
               </TooltipComponent>
