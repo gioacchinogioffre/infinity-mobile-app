@@ -5,13 +5,14 @@ import { Stacked, Pie, Button, SparkLine } from '../components'
 import { earningData, SparklineAreaData, ecomPieChartDat } from '../data/dummy'
 import { useStateContext } from '../contexts/ContextProvider'
 
+
+
 const Ecommerce = () => {
   const { currentColor } = useStateContext()
 
   return (
     <div className='mt-12'>
-      <div className='flex flex-wrap lg:flex-nowrap justify-center'>
-        <div className='bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-44 rounded-xl w-full lg:w-80 p-8 pt-9 m-3 bg-hero-pattern bg-no-repeat bg-cover bg-center'>
+        <div className='bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-50 rounded-xl w-full p-5 pt-9 m-3 bg-hero-pattern bg-no-repeat bg-cover bg-center'>
           <div className='flex justify-between items-center'>
             <div>
               <p className='font-bold text-gray-400'>Earnings</p>
@@ -22,15 +23,16 @@ const Ecommerce = () => {
             <Button size='md' color='white' bgColor={currentColor} text='Download' borderRadius='10px'></Button>
           </div>
         </div>
+      <div className='flex flex-wrap lg:flex-nowrap justify-center'>
 
-        <div className='flex m-3 flex-wrap justify-center gap-1 items-center'>
+        <div className='flex m-3 flex-wrap justify-between gap-6 '>
           {
             earningData.map(item => (
               <div key={item.title} className='bg-white dark:text-gray-200 dark:bg-secondary-dark-bg md:w-56 p-4 pt-9 rounded-2xl'>
-                <button className='text-2xl opacity-0.9 rounded-full p-4 hover:drop-shadow-xl' type='button' style={{color: item.iconColor, backgroundColor: item.iconBg}}>
-                  {item.icon}
+                <button className='rounded-full hover:drop-shadow-xl cursor-pointer justify-center items-center'>
+                  <img src={item.image} alt='image' className='rounded-full w-14 h-14 hover:drop-shadow-xl cursor-pointer' />
                 </button>
-                <p className='mt-3'>
+                <p>
                   <span className='text-lg font-semibold'>{item.amount}</span>
                   <span className={`text-sm text-${item.pcColor} ml-2`}>{item.percentage}</span>
                 </p>
@@ -42,7 +44,7 @@ const Ecommerce = () => {
       </div>
 
       <div className='flex gap-10 flex-wrap justify-center'>
-        <div className='bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl md:w-780'>
+        <div className='bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl md:w-780 w-full' >
           <div className='flex justify-between'>
               <p className='font-semibold text-xl'>
                   Revenue Updates
@@ -93,8 +95,8 @@ const Ecommerce = () => {
                   Expense
                 </p>
               </div>
-              <div className='mt-5 bg-red-400'>
-                <SparkLine currentColor='black' id='line-sparkline' type='Line' height='80px' width='250px' data={SparklineAreaData} color={currentColor} />
+              <div className='mt-5'>
+                {/* <SparkLine currentColor='black' id='sparkline' type='Line' height='80px' width='250px' data={SparklineAreaData} color={currentColor} /> */}
               </div>
               <div className='mt-10'>
                 <Button color='white' bgColor={currentColor}  text='Download Report' borderRadius='1vw'/>

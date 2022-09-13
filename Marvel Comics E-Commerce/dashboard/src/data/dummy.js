@@ -22,6 +22,10 @@ import product5 from './product5.jpg';
 import product6 from './product6.jpg';
 import product7 from './product7.jpg';
 import product8 from './product8.jpg';
+import avatarCA from '../data/shieldCA.png'
+import avatarIM from '../data/ironmanavatar.png'
+import avatarH from '../data/hulkfist.png'
+import avatarT from '../data/hammerthor.png'
 
 export const gridOrderImage = (props) => (
   <div>
@@ -622,6 +626,7 @@ export const earningData = [
     iconColor: '#03C9D7',
     iconBg: '#E5FAFB',
     pcColor: 'red-600',
+    image: avatarIM
   },
   {
     icon: <BsBoxSeam />,
@@ -631,6 +636,7 @@ export const earningData = [
     iconColor: 'rgb(255, 244, 229)',
     iconBg: 'rgb(254, 201, 15)',
     pcColor: 'green-600',
+    image: avatarT
   },
   {
     icon: <FiBarChart />,
@@ -639,8 +645,8 @@ export const earningData = [
     title: 'Sales',
     iconColor: 'rgb(228, 106, 118)',
     iconBg: 'rgb(255, 244, 229)',
-
     pcColor: 'green-600',
+    image: avatarCA
   },
   {
     icon: <HiOutlineRefresh />,
@@ -650,6 +656,7 @@ export const earningData = [
     iconColor: 'rgb(0, 194, 146)',
     iconBg: 'rgb(235, 250, 242)',
     pcColor: 'red-600',
+    image: avatarH
   },
 ];
 
