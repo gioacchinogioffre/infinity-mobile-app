@@ -6,6 +6,8 @@ import { earningData, SparklineAreaData, ecomPieChartDat } from '../data/dummy'
 import { useStateContext } from '../contexts/ContextProvider'
 
 const Ecommerce = () => {
+  const { currentColor } = useStateContext()
+
   return (
     <div className='mt-12'>
       <div className='flex flex-wrap lg:flex-nowrap justify-center'>
@@ -17,7 +19,7 @@ const Ecommerce = () => {
             </div>
           </div>
           <div className='mt-6'>
-            <Button size='md' color='white' bgColor='red' text='Download' borderRadius='10px'></Button>
+            <Button size='md' color='white' bgColor={currentColor} text='Download' borderRadius='10px'></Button>
           </div>
         </div>
 
@@ -92,10 +94,10 @@ const Ecommerce = () => {
                 </p>
               </div>
               <div className='mt-5 bg-red-400'>
-                <SparkLine currentColor='black' id='line-sparkline' type='Line' height='80px' width='250px' data={SparklineAreaData} color='black'/>
+                <SparkLine currentColor='black' id='line-sparkline' type='Line' height='80px' width='250px' data={SparklineAreaData} color={currentColor} />
               </div>
               <div className='mt-10'>
-                <Button color='white' bgColor='black' text='Download Report' borderRadius='1vw'/>
+                <Button color='white' bgColor={currentColor}  text='Download Report' borderRadius='1vw'/>
               </div>
           </div>
           <div>
