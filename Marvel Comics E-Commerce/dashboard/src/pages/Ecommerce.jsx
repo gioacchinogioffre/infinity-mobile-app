@@ -96,7 +96,7 @@ const Ecommerce = () => {
                 </p>
               </div>
               <div className='mt-5'>
-                {/* <SparkLine currentColor='black' id='sparkline' type='Line' height='80px' width='250px' data={SparklineAreaData} color={currentColor} /> */}
+                <SparkLine currentColor='black' id='sparkline' type='Line' height='80px' width='250px' data={SparklineAreaData} color={currentColor} />
               </div>
               <div className='mt-10'>
                 <Button color='white' bgColor={currentColor}  text='Download Report' borderRadius='1vw'/>
