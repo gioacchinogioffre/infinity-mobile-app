@@ -179,6 +179,7 @@ export const barPrimaryXAxis = {
 export const barPrimaryYAxis = {
   majorGridLines: { width: 0 },
   majorTickLines: { width: 0 },
+  interval: 1,
   lineStyle: { width: 0 },
   labelStyle: { color: 'transparent' },
 };
