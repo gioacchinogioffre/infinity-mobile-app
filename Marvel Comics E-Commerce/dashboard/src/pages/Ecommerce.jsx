@@ -5,6 +5,7 @@ import { Stacked, Pie, Button, SparkLine } from '../components'
 import { earningData, SparklineAreaData, ecomPieChartDat } from '../data/dummy'
 import { useStateContext } from '../contexts/ContextProvider'
 
+import { stackedCustomSeries, stackedPrimaryXAxis, stackedPrimaryYAxis } from '../data/dummy'
 
 
 const Ecommerce = () => {
@@ -105,7 +106,7 @@ const Ecommerce = () => {
               </div>
           </div>
           <div>
-             <Stacked width='320px' height='200px'  />
+             <Stacked width='320px' height='200px' stackedCustomSeries={stackedCustomSeries} stackedPrimaryXAxis={stackedPrimaryXAxis} stackedPrimaryYAxis={stackedPrimaryYAxis}  />
           </div>
         </div>
       </div>

@@ -1,15 +1,17 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { MdOutlineCancel } from 'react-icons/md'
+import { TbLogout } from 'react-icons/tb'
 import { TooltipComponent } from '@syncfusion/ej2-react-popups'
 
 import { links } from '../data/dummy'
 import { useStateContext } from '../contexts/ContextProvider'
 import logo from '../data/infinityLogo1.png'
+import { LegendItemStyle } from '@syncfusion/ej2-react-charts'
 
 
 const Sidebar = () => {
-  const { activeMenu, setActiveMenu, screenSize, currentColor } = useStateContext()
+  const { activeMenu, setActiveMenu, screenSize, currentColor, currentMode } = useStateContext()
 
   const handleCloseSideBar = () => {
     if (activeMenu && screenSize <= 900) setActiveMenu(false)
@@ -39,13 +41,21 @@ const Sidebar = () => {
                 <p className='text-gray-400 m-3 mt-4 uppercase'>{l.title}</p>
                 {l.links.map(link => (
                   <NavLink key={link.name} to={`/${link.name}`} onClick={handleCloseSideBar} style={({ isActive }) => ({backgroundColor: isActive ? currentColor : ''})} className={({ isActive })=> isActive ? activeLink : normalLink}>
+                    {link.icon}
                     <span className='capitalize'>{link.name}</span>
                   </NavLink>
                 ))}
               </div>
             ))}
           </div>
+          <div className='flex ml-3'>
+            <button className='m-3 mt-6 flex items-center'>
+              <TbLogout color={currentMode==='Dark' && 'white'}/>
+              <span className={`ml-5 ${currentMode==='Dark' && 'text-white'}`}>Logout</span>
+              </button>
+          </div>
         </>
+
       }
     </div>
   )

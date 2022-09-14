@@ -8,7 +8,7 @@ import { TooltipComponent } from '@syncfusion/ej2-react-popups'
 
 
 import avatar from '../data/profilepic.jpeg'
-import { Cart, Chat, Notification, UserProfile } from '.'
+import { Chat, Notification, UserProfile } from '.'
 import { useStateContext } from '../contexts/ContextProvider'
 
 const NavButton = ({title, customFunc, icon, color, dotColor}) => (
@@ -43,7 +43,6 @@ const Navbar = () => {
     <div className='flex justify-between p-2 md:mx-6 relative'>
       <NavButton title='Menu' customFunc={() => setActiveMenu(prev => !prev)} color={currentColor} icon={<AiOutlineMenu/>} />
       <div className='flex'>
-        <NavButton title='Cart' customFunc={() => handleClick('cart')} color={currentColor} icon={<FiShoppingCart/>} />
         <NavButton title='Chat' customFunc={() => handleClick('chat')} color={currentColor} icon={<BsChatLeft/>} dotColor='black' />
         <NavButton title='Notifications' customFunc={() => handleClick('notification')} color={currentColor} icon={<RiNotification3Line/>} dotColor='black' />
         <TooltipComponent content='Profile' position='BottomCenter'>

@@ -61,14 +61,14 @@ const App = () => {
                         <Route path='/color-picker' element={<ColorPicker/>}/>
 
                         {/* CHARTS */}
-                        <Route path='/line' element={<Line/>}/>
+                        <Route path='/inflation%20rate' element={<Line/>}/>
                         <Route path='/area' element={<Area/>}/>
                         <Route path='/bar' element={<Bar/>}/>
                         <Route path='/pie' element={<Pie/>}/>
                         <Route path='/audience' element={<Audience/>}/>
                         <Route path='/color-mapping' element={<ColorMapping/>}/>
                         <Route path='/pyramid' element={<Pyramid/>}/>
-                        <Route path='/stacked' element={<Stacked/>}/>
+                        <Route path='/revenue' element={<Stacked/>}/>
 
                     </Routes>
                     </div>
