@@ -6,7 +6,7 @@ import { Header } from '../components'
 
 const Customers = () => {
   return (
-    <div className='mt-12 md:m-10 p-2 md:p-10 bg-white rounded-3xl'>
+    <div className='mt-12 md:m-10 p-2 md:p-10 bg-white rounded-3xl  dark:bg-secondary-dark-bg'>
     <Header category='Page' title='Customers'/>
     <GridComponent dataSource={customersData} allowPaging allowSorting editSettings={{allowDeleting: true, allowEditing: true, allowAdding: true}} allowPdfExport toolbar={['Search', 'Delete', 'Add']} width='auto'  >
       <ColumnsDirective>

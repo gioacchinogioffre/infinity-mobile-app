@@ -532,7 +532,7 @@ export const links = [
     ],
   },
   {
-    title: 'Charts',
+    title: 'Analytics',
     links: [
       {
         name: 'line',
@@ -552,7 +552,7 @@ export const links = [
         icon: <FiPieChart />,
       },
       {
-        name: 'financial',
+        name: 'audience',
         icon: <RiStockLine />,
       },
       {

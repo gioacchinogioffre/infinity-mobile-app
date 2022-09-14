@@ -12,7 +12,7 @@ const Ecommerce = () => {
 
   return (
     <div className='mt-12'>
-        <div className='bg-white dark:text-black dark:bg-secondary-dark-bg h-50 rounded-xl w-full p-5 pt-9 m-3 bg-hero-pattern bg-no-repeat bg-cover bg-center'>
+        <div className='bg-white dark:text-black  dark:bg-secondary-dark-bg h-50 rounded-xl w-11/12 p-5 pt-9 m-4 bg-hero-pattern bg-no-repeat bg-cover bg-center ml-16'>
           <div className='flex justify-between items-center'>
             <div>
               <p className='font-bold text-gray-400'>Earnings</p>
@@ -34,7 +34,9 @@ const Ecommerce = () => {
                 </button>
                 <p>
                   <span className='text-lg font-semibold'>{item.amount}</span>
-                  <span className={`text-sm text-${item.pcColor} ml-2`}>{item.percentage}</span>
+                  {item.pcColor === 'red-600' 
+                  ? <span className={`text-sm text-red-600 ml-2`}>{item.percentage}</span> 
+                  : <span className={`text-sm text-green-600 ml-2`}>{item.percentage}</span>}
                 </p>
                 <p className='text-sm text-gray-400 mt-1'>{item.title}</p>
               </div>
