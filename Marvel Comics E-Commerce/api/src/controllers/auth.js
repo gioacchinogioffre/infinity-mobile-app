@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 
  const signup = async (req,res)=>{
     try{
-        const {username, email, roles, password} = req.body
+        const {username, email, roles, password, city,country,address,postalCode, telephone_number,gender,birthday} = req.body
         
         if(!username|| !email || !password){
             return res.status(404).json({message: "Missing data"})
@@ -18,7 +18,15 @@ const bcrypt = require('bcrypt');
         const newUser = await  User.create({
             username: username,
             email: email,
-            password: hashPassword
+            password: hashPassword,
+            city,
+            country,
+            address,
+            postalCode,
+            telephone_number,
+            gender,
+            birthday
+
         })
         if(roles){
             await newUser.addRoles([roles])

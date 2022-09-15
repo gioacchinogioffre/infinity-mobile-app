@@ -38,6 +38,22 @@ module.exports = (sequelize) => {
     },
     telephone_number: {
       type: DataTypes.STRING,
+    },
+    status:{
+      type: DataTypes.ENUM("active","block"),
+      defaultValue: "active"
+    },
+    show:{
+      type: DataTypes.BOOLEAN,
+      defaultValue: true
+    },
+    gender:{
+      type:DataTypes.ENUM("male","female", "other"),
+      
+    },
+    birthday:{
+      type: DataTypes.STRING,
+  
     }
   }, {
     timestamps: false,

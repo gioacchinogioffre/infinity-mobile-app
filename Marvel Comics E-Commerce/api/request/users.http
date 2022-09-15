@@ -1,0 +1,170 @@
+
+### USER-1
+POST  http://localhost:4000/auth/signup
+Content-Type: application/json
+
+{
+    "username": "Dylan",
+    "email": "dylan@gmail.com",
+    "password": "12345",
+    "city":"USA",
+    "country":"California",
+    "address": "Landing Lange, APT 4",
+    "postalCode":"4455",
+    "telephone_number": "+01 385-334-4381",
+    "gender":"male",
+    "birthday":"19-06-1998"
+}
+### USER-2
+
+POST  http://localhost:4000/auth/signup
+Content-Type: application/json
+
+{
+    "username": "Stephanie",
+    "email": "stephanie@hotmail.com",
+    "password": "12345",
+    "city":"UK",
+    "country":"London",
+    "address": "10 Downing Street",
+    "postalCode":"1020",
+    "telephone_number": "+44 20-7234-3456",
+    "gender":"female",
+    "birthday":"10-02-1986"
+}
+
+### USER-3
+POST  http://localhost:4000/auth/signup
+Content-Type: application/json
+
+{
+    "username": "Kiran",
+    "email": "kiran@hotmail.com",
+    "password": "12345",
+    "city":"India",
+    "country":"Nueva Delhi",
+    "address": "Geeta Vadhera",
+    "postalCode":"122017",
+    "telephone_number": "+91 22-1234-5678",
+    "gender":"male",
+    "birthday":"01-04-1990"
+}
+
+### USER-4
+POST  http://localhost:4000/auth/signup
+Content-Type: application/json
+
+{
+    "username": "Catalina",
+    "email": "catalina@hotmail.com",
+    "password": "12345",
+    "city":"Spain",
+    "country":"Madrid",
+    "address": "San Andrés 28",
+    "postalCode":"7817",
+    "telephone_number": "+34 919-931-578",
+    "gender":"female",
+    "birthday":"20-09-2000"
+}
+
+### USER-5
+POST  http://localhost:4000/auth/signup
+Content-Type: application/json
+
+{
+    "username": "Adriano",
+    "email": "adriano@hotmail.com",
+    "password": "12345",
+    "city":" Italy",
+    "country":"Sicily",
+    "address": "Via garibaldi 26",
+    "postalCode":"70043",
+    "telephone_number": "+39 212-456-7890",
+    "gender":"male",
+    "birthday":"19-05-2001"
+}
+
+### USER-6
+POST  http://localhost:4000/auth/signup
+Content-Type: application/json
+
+{
+    "username": "Alexandra",
+    "email": "alexandra@hotmail.com",
+    "password": "12345",
+    "city":"France",
+    "country":"Paris",
+    "address": "Capitaine Jean Luc PICARD",
+    "postalCode":"33500",
+    "telephone_number": "+33 772-112-3490",
+    "gender":"female",
+    "birthday":"19-05-1997"
+}
+
+### USER-7
+POST  http://localhost:4000/auth/signup
+Content-Type: application/json
+
+{
+    "username": "Matias",
+    "email": "matias@gmail.com",
+    "password": "12345",
+    "city":"Argentina",
+    "country":"Buenos Aires",
+    "address": "Alberti 653",
+    "postalCode":"5501",
+    "telephone_number": "+54 263-225-879",
+    "gender":"male",
+    "birthday":"05-12-1999"
+}
+
+### USER-8
+POST  http://localhost:4000/auth/signup
+Content-Type: application/json
+
+{
+    "username": "Beatriz",
+    "email": "beatriz@gmail.com",
+    "password": "12345",
+    "city":"Mexico",
+    "country":"D.F",
+    "address": ": Avenida Landana 123",
+    "postalCode":"01256",
+    "telephone_number": "+52 011-255-1234",
+    "gender":"female",
+    "birthday":"15-10-2002"
+}
+
+### USER-9
+POST  http://localhost:4000/auth/signup
+Content-Type: application/json
+
+{
+    "username": "Lucas",
+    "email": "lucas@gmail.com",
+    "password": "12345",
+    "city":"USA",
+    "country":"New York",
+    "address": "59 West 46th Street",
+    "postalCode":"44522",
+    "telephone_number": "+01 646 980 4741",
+    "gender":"male",
+    "birthday":"04-06-2001"
+}
+
+### USER-10
+POST  http://localhost:4000/auth/signup
+Content-Type: application/json
+
+{
+    "username": "Caroline",
+    "email": "caroline@gmail.com",
+    "password": "12345",
+    "city":"USA",
+    "country":"North Carolina",
+    "address": "Pavilion. 2608 Erwin Road",
+    "postalCode":"18522",
+    "telephone_number": "+01 904 480 7921",
+    "gender":"female",
+    "birthday":"04-06-2001"
+}

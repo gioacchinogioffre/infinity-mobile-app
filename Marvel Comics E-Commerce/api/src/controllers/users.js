@@ -6,22 +6,6 @@ const getUsers = async (req, res) => {
     try {
         const users = await User.findAll({
             include:[Role,Review,Order]
-
-            // {
-            //     model: Review,
-            //     attributes:["id"],
-            //     through: {
-            //         attributes: [],
-            //     }
-            // },
-            // {
-            //     model: Order,
-            //     attributes:["id"],
-            //     through: {
-            //         attributes: [],
-            //     }
-            // }
-        
             });
         return res.json(users);
     }
@@ -34,7 +18,19 @@ const getUserByEmail = async (req, res) => {
     const { email } = req.params;
 
     try {
-        const user = await User.findOne({ where: { email }, include: [Role, Review, Order]} );
+        const user = await User.findOne({ where: { email }, include: [
+            {
+                model: Role,
+                through: {
+                    attributes:[]
+                }
+            },
+            
+            {model:Review},
+
+            { model:Order,}
+
+        ]} ); // role, review, order
 
         user ? res.json(user) : res.status(400).json({ message: "User not found " });
     }
@@ -45,7 +41,7 @@ const getUserByEmail = async (req, res) => {
 
 const updateUser = async (req, res) => { 
     const { email: paramEmail } = req.params;
-    let { username, email, password, city, country, telephone_number, address, postalCode,} = req.body;
+    let { username, email, password, city, country, telephone_number, address, postalCode,status,show, gender,birthday} = req.body;
     
     const userExists = await User.findOne({ where: { email: paramEmail }});
 
@@ -66,6 +62,10 @@ const updateUser = async (req, res) => {
                 telephone_number: telephone_number,
                 address: address,
                 postalCode: postalCode,
+                status:status,
+                show:show,
+                gender: gender,
+                birthday:birthday
             }, {where: { email: paramEmail }}
         )
 
