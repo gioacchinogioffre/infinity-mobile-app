@@ -1,3 +1,5 @@
+
+![logoInfinity](https://user-images.githubusercontent.com/101685121/190438766-f0e6cba6-b6c2-49b7-88f1-0cdfa490954d.png)
 # Infinity
 > E-Commerce mobile app that consist on Marvel's comics selling.
 > Live demo [_here_](https://www.linkedin.com/feed/update/urn:li:activity:6973427833364709376/). <!-- If you have the project hosted somewhere, include the link here. -->
