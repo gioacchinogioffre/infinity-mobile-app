@@ -4,12 +4,14 @@ import { FiShoppingBag, FiEdit, FiPieChart, FiBarChart, FiCreditCard, FiStar, Fi
 import { BsKanban, BsBarChart, BsBoxSeam, BsCurrencyDollar, BsShield, BsChatLeft } from 'react-icons/bs';
 import { BiColorFill } from 'react-icons/bi';
 import { FaUsers } from 'react-icons/fa';
-import { IoMdContacts } from 'react-icons/io';
+import { IoMdContacts, IoMdAdd } from 'react-icons/io';
+import { ImProfile } from 'react-icons/im';
+import { GrUserSettings } from 'react-icons/gr';
+import { FaTasks } from 'react-icons/fa';
 import { RiContactsLine, RiStockLine } from 'react-icons/ri';
-import { MdOutlineSupervisorAccount } from 'react-icons/md';
+import { MdOutlineSupervisorAccount, MdOutlineMarkEmailUnread } from 'react-icons/md';
 import { HiOutlineRefresh } from 'react-icons/hi';
 import { TiTick } from 'react-icons/ti';
-import { GiLouvrePyramid } from 'react-icons/gi';
 import { GrLocation } from 'react-icons/gr';
 import avatar from './avatar.jpg';
 import avatar2 from './avatar2.jpg';
@@ -491,6 +493,10 @@ export const links = [
         name: 'ecommerce',
         icon: <FiShoppingBag />,
       },
+      {
+        name: 'profile',
+        icon: <ImProfile />,
+      },
     ],
   },
 
@@ -508,6 +514,10 @@ export const links = [
       {
         name: 'customers',
         icon: <RiContactsLine />,
+      },
+      {
+        name: 'add product',
+        icon: <IoMdAdd />,
       },
     ],
   },
@@ -544,26 +554,26 @@ export const links = [
         icon: <FaUsers />,
       },
       {
-        name: 'inflation rate',
+        name: 'sales',
         icon: <AiOutlineStock />,
       },
-      {
-        name: 'area',
-        icon: <AiOutlineAreaChart />,
-      },
+      // {
+      //   name: 'area',
+      //   icon: <AiOutlineAreaChart />,
+      // },
 
+      // {
+      //   name: 'bar',
+      //   icon: <AiOutlineBarChart />,
+      // },
       {
-        name: 'bar',
-        icon: <AiOutlineBarChart />,
-      },
-      {
-        name: 'pie',
+        name: 'costs',
         icon: <FiPieChart />,
       },
-      {
-        name: 'color-mapping',
-        icon: <BsBarChart />,
-      },
+      // {
+      //   name: 'color-mapping',
+      //   icon: <BsBarChart />,
+      // },
     ],
   },
 ];
@@ -867,21 +877,21 @@ export const themeColors = [
 
 export const userProfileData = [
   {
-    icon: <BsCurrencyDollar />,
+    icon: <GrUserSettings />,
     title: 'My Profile',
     desc: 'Account Settings',
     iconColor: '#03C9D7',
     iconBg: '#E5FAFB',
   },
   {
-    icon: <BsShield />,
+    icon: <MdOutlineMarkEmailUnread />,
     title: 'My Inbox',
     desc: 'Messages & Emails',
     iconColor: 'rgb(0, 194, 146)',
     iconBg: 'rgb(235, 250, 242)',
   },
   {
-    icon: <FiCreditCard />,
+    icon: <FaTasks />,
     title: 'My Tasks',
     desc: 'To-do and Daily Tasks',
     iconColor: 'rgb(255, 244, 229)',
@@ -2272,32 +2282,23 @@ export const scheduleData = [
 
 export const lineChartData = [
   [
-    { x: new Date(2005, 0, 1), y: 21 },
-    { x: new Date(2006, 0, 1), y: 24 },
-    { x: new Date(2007, 0, 1), y: 36 },
-    { x: new Date(2008, 0, 1), y: 38 },
-    { x: new Date(2009, 0, 1), y: 54 },
-    { x: new Date(2010, 0, 1), y: 57 },
-    { x: new Date(2011, 0, 1), y: 70 },
+    { x: new Date(2019, 0, 1), y: 21 },
+    { x: new Date(2020, 0, 1), y: 24 },
+    { x: new Date(2021, 0, 1), y: 36 },
+    { x: new Date(2022, 0, 1), y: 38 },
   ],
   [
-    { x: new Date(2005, 0, 1), y: 28 },
-    { x: new Date(2006, 0, 1), y: 44 },
-    { x: new Date(2007, 0, 1), y: 48 },
-    { x: new Date(2008, 0, 1), y: 50 },
-    { x: new Date(2009, 0, 1), y: 66 },
-    { x: new Date(2010, 0, 1), y: 78 },
-    { x: new Date(2011, 0, 1), y: 84 },
+    { x: new Date(2019, 0, 1), y: 28 },
+    { x: new Date(2020, 0, 1), y: 44 },
+    { x: new Date(2021, 0, 1), y: 48 },
+    { x: new Date(2022, 0, 1), y: 50 },
   ],
 
   [
-    { x: new Date(2005, 0, 1), y: 10 },
-    { x: new Date(2006, 0, 1), y: 20 },
-    { x: new Date(2007, 0, 1), y: 30 },
-    { x: new Date(2008, 0, 1), y: 39 },
-    { x: new Date(2009, 0, 1), y: 50 },
-    { x: new Date(2010, 0, 1), y: 70 },
-    { x: new Date(2011, 0, 1), y: 100 },
+    { x: new Date(2019, 0, 1), y: 10 },
+    { x: new Date(2020, 0, 1), y: 20 },
+    { x: new Date(2021, 0, 1), y: 30 },
+    { x: new Date(2022, 0, 1), y: 39 },
   ],
 ];
 export const dropdownData = [
@@ -2326,7 +2327,7 @@ export const lineCustomSeries = [
   { dataSource: lineChartData[0],
     xName: 'x',
     yName: 'y',
-    name: 'Germany',
+    name: 'America',
     width: '2',
     marker: { visible: true, width: 10, height: 10 },
     type: 'Line' },
@@ -2334,7 +2335,7 @@ export const lineCustomSeries = [
   { dataSource: lineChartData[1],
     xName: 'x',
     yName: 'y',
-    name: 'England',
+    name: 'Europe',
     width: '2',
     marker: { visible: true, width: 10, height: 10 },
     type: 'Line' },
@@ -2342,7 +2343,7 @@ export const lineCustomSeries = [
   { dataSource: lineChartData[2],
     xName: 'x',
     yName: 'y',
-    name: 'India',
+    name: 'Asia',
     width: '2',
     marker: { visible: true, width: 10, height: 10 },
     type: 'Line' },

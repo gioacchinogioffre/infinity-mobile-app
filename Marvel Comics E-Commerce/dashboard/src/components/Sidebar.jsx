@@ -49,7 +49,7 @@ const Sidebar = () => {
             ))}
           </div>
           <div className='flex ml-3'>
-            <button className='m-3 mt-6 flex items-center'>
+            <button className='m-3 mt-10 flex items-center'>
               <TbLogout color={currentMode==='Dark' && 'white'}/>
               <span className={`ml-5 ${currentMode==='Dark' && 'text-white'}`}>Logout</span>
               </button>
