@@ -49,7 +49,7 @@ const bcrypt = require('bcrypt');
 }
  const signin = async (req,res)=>{
  const {email, password} = req.body
-    User.findOne({where:{email: email}, include:[Order]})
+    User.findOne({where:{email: email}, include:[Order,Role]})
     
     .then(user=>{
         if(!user){
