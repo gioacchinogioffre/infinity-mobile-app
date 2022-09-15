@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { FiSettings } from 'react-icons/fi'
 import { TooltipComponent } from '@syncfusion/ej2-react-popups'
-import { Footer, Sidebar, ThemeSettings, Navbar } from './components'
+import { Sidebar, ThemeSettings, Navbar, Profile } from './components'
 import { Ecommerce, Orders, Calendar, Employees, Stacked, Pyramid, Customers, Kanban, Area, Bar, Pie, ColorPicker, ColorMapping, Editor, Line, Audience } from './pages'
 import './App.css'
 import { useStateContext } from './contexts/ContextProvider'
@@ -48,6 +48,8 @@ const App = () => {
                         {/* DASHBOARD */}
                         <Route path='/' element={<Ecommerce/>}/>
                         <Route path='/Ecommerce' element={<Ecommerce/>}/>
+                        <Route path='/profile' element={<Profile/>}/>
+                        <Route path='/add%20product' element={<Ecommerce/>}/>
 
                         {/* PAGES */}
                         <Route path='/orders' element={<Orders/>}/>
@@ -61,15 +63,14 @@ const App = () => {
                         <Route path='/color-picker' element={<ColorPicker/>}/>
 
                         {/* CHARTS */}
-                        <Route path='/inflation%20rate' element={<Line/>}/>
-                        <Route path='/area' element={<Area/>}/>
-                        <Route path='/bar' element={<Bar/>}/>
-                        <Route path='/pie' element={<Pie/>}/>
+                        <Route path='/sales' element={<Line/>}/>
+                        {/* <Route path='/area' element={<Area/>}/> */}
+                        {/* <Route path='/bar' element={<Bar/>}/> */}
+                        <Route path='/costs' element={<Pie/>}/>
                         <Route path='/audience' element={<Audience/>}/>
-                        <Route path='/color-mapping' element={<ColorMapping/>}/>
-                        <Route path='/pyramid' element={<Pyramid/>}/>
+                        {/* <Route path='/color-mapping' element={<ColorMapping/>}/> */}
+                        {/* <Route path='/pyramid' element={<Pyramid/>}/> */}
                         <Route path='/revenue' element={<Stacked/>}/>
-
                     </Routes>
                     </div>
                 </div>

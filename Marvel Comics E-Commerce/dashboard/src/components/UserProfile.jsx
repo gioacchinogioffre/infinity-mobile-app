@@ -7,18 +7,18 @@ import { useStateContext } from '../contexts/ContextProvider';
 import avatar from '../data/profilepic.jpeg';
 
 const UserProfile = () => {
-  const { currentColor } = useStateContext();
+  const { currentColor, handleClose } = useStateContext();
 
   return (
-    <div className="nav-item absolute right-1 top-16 bg-white dark:bg-[#42464D] p-8 rounded-lg w-96">
-      <div className="flex justify-between items-center">
-        <p className="font-semibold text-lg dark:text-gray-200">User Profile</p>
+    <div className="nav-item absolute right-1 top-16 bg-white dark:bg-[#42464D] p-6 rounded-md w-96 border-1 border-solid border-slate-200">
+      <div className="flex justify-end h-0">
         <Button
           icon={<MdOutlineCancel />}
           color="rgb(153, 171, 180)"
           bgHoverColor="light-gray"
           size="2xl"
           borderRadius="50%"
+          handleClose={() => handleClose('userProfile')}
         />
       </div>
       <div className="flex gap-5 items-center mt-6 border-color border-b-1 pb-6">

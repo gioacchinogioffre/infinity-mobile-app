@@ -4,7 +4,6 @@ const StateContext = createContext() // reemplazamos redux con esto. Creamos un 
 
 const initialState = {
     chat: false,
-    cart: false,
     userProfile: false,
     notification: false
 }
@@ -23,13 +22,13 @@ export const ContextProvider = ({children}) => {
     const setMode = (e) => {
         setCurrentMode(e.target.value)
         localStorage.setItem('themeMode', e.target.value)
-        setThemeSettings(false)
+        // setThemeSettings(false)
     }
 
     const setColor = (color) => {
         setCurrentColor(color)
         localStorage.setItem('colorMode', e.target.value)
-        setThemeSettings(false)
+        // setThemeSettings(false)
     }
 
 
@@ -37,9 +36,13 @@ export const ContextProvider = ({children}) => {
         setIsClicked({...initialState, [clicked]: true})
     }
 
+    const handleClose = (clicked) => {
+        setIsClicked({...initialState, [clicked]: false})
+    }
+
 
     return (
-        <StateContext.Provider value={{ activeMenu, setActiveMenu, isClicked, setIsClicked, handleClick, screenSize, setScreenSize, currentColor, currentMode, themeSettings, setThemeSettings, setMode, setColor }}> 
+        <StateContext.Provider value={{ activeMenu, setActiveMenu, isClicked, setIsClicked, handleClick, screenSize, setScreenSize, currentColor, currentMode, themeSettings, setThemeSettings, setMode, setColor, handleClose }}> 
             {children}
         </StateContext.Provider>
     )
