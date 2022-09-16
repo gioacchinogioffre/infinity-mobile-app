@@ -65,7 +65,7 @@ BACK-END
 <img width="1440" alt="Captura de Pantalla 2022-09-09 a la(s) 15 15 44" src="https://user-images.githubusercontent.com/101685121/189418222-8ef8972e-11bd-45e6-8660-c6c9cbc1af83.png">
 <img width="1440" alt="Captura de Pantalla 2022-09-09 a la(s) 15 16 01" src="https://user-images.githubusercontent.com/101685121/189418542-1668103b-52e1-4f68-9cdc-64a6207dca63.png">
 
-## App Screenshots
+## Dashboard Screenshots
 
 <img width="1440" alt="Captura de Pantalla 2022-09-15 a la(s) 18 08 04" src="https://user-images.githubusercontent.com/101685121/190707384-797436ef-19b4-42f6-a5e9-fd316dfbb8d6.png">
 <img width="1440" alt="Captura de Pantalla 2022-09-15 a la(s) 18 09 26" src="https://user-images.githubusercontent.com/101685121/190707394-ad14d615-b549-4e90-9258-dbfc1542db3d.png">
