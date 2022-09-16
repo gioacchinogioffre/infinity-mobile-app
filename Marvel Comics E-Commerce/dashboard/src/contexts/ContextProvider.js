@@ -18,6 +18,7 @@ export const ContextProvider = ({children}) => {
     const [currentColor, setCurrentColor] = useState('#03c9d7')
     const [currentMode, setCurrentMode] = useState('Light')
     const [themeSettings, setThemeSettings] = useState(false)
+    const [isAuthenticated, setIsAuthenticated] = useState(false)
 
     const setMode = (e) => {
         setCurrentMode(e.target.value)
@@ -25,8 +26,8 @@ export const ContextProvider = ({children}) => {
         // setThemeSettings(false)
     }
 
-    const setColor = (color) => {
-        setCurrentColor(color)
+    const setColor = (e) => {
+        setCurrentColor(e)
         localStorage.setItem('colorMode', e.target.value)
         // setThemeSettings(false)
     }
@@ -42,7 +43,7 @@ export const ContextProvider = ({children}) => {
 
 
     return (
-        <StateContext.Provider value={{ activeMenu, setActiveMenu, isClicked, setIsClicked, handleClick, screenSize, setScreenSize, currentColor, currentMode, themeSettings, setThemeSettings, setMode, setColor, handleClose }}> 
+        <StateContext.Provider value={{ activeMenu, setActiveMenu, isClicked, setIsClicked, handleClick, screenSize, setScreenSize, currentColor, currentMode, themeSettings, setThemeSettings, setMode, setColor, handleClose, isAuthenticated, setIsAuthenticated }}> 
             {children}
         </StateContext.Provider>
     )

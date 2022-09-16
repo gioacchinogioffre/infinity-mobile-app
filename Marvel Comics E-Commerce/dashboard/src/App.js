@@ -1,11 +1,13 @@
 import React from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import { FiSettings } from 'react-icons/fi'
 import { TooltipComponent } from '@syncfusion/ej2-react-popups'
-import { Sidebar, ThemeSettings, Navbar, Profile } from './components'
-import { Ecommerce, Orders, Calendar, Employees, Stacked, Pyramid, Customers, Kanban, Area, Bar, Pie, ColorPicker, ColorMapping, Editor, Line, Audience } from './pages'
+import { Sidebar, ThemeSettings, Navbar, Profile, AddProduct } from './components'
+import { Ecommerce, Orders, Calendar, Employees, Stacked, Customers, Kanban, Login, Bar, Pie, ColorPicker, ColorMapping, Editor, Line, Audience } from './pages'
 import './App.css'
 import { useStateContext } from './contexts/ContextProvider'
+
+
 
 
 /*SETTINGS BUTTON
@@ -13,12 +15,14 @@ Le damos inline style en el color del background para ir cambiando los theme col
 */
 
 const App = () => {
-  const { activeMenu, themeSettings, setThemeSettings, currentColor, currentMode } = useStateContext()
+  const { activeMenu, themeSettings, setThemeSettings, currentColor, currentMode, isAuthenticated } = useStateContext()
 
   return (
     <div className={currentMode === 'Dark' ? 'dark' : ''}>
         <BrowserRouter>
 
+            {isAuthenticated ? 
+            
             <div className='flex relative dark:bg-main-dark-bg'> 
                 <div className='fixed right-4 bottom-4' style={{zIndex:'1000'}}>
                     <TooltipComponent content='Settings' position='Top'>
@@ -44,37 +48,41 @@ const App = () => {
                     
                     {themeSettings && <ThemeSettings/>}  
 
-                    <Routes>
+                    <React.Fragment>
                         {/* DASHBOARD */}
-                        <Route path='/' element={<Ecommerce/>}/>
-                        <Route path='/Ecommerce' element={<Ecommerce/>}/>
-                        <Route path='/profile' element={<Profile/>}/>
-                        <Route path='/add%20product' element={<Ecommerce/>}/>
+                        <Route path='/Ecommerce' component={Ecommerce}/>
+                        <Route path='/profile' component={Profile}/>
+                        <Route path='/add product' component={AddProduct}/>
 
                         {/* PAGES */}
-                        <Route path='/orders' element={<Orders/>}/>
-                        <Route path='/employees' element={<Employees/>}/>
-                        <Route path='/customers' element={<Customers/>}/>
+                        <Route path='/orders' component={Orders}/>
+                        <Route path='/employees' component={Employees}/>
+                        <Route path='/customers' component={Customers}/>
 
                         {/* APPS */}
-                        <Route path='/kanban' element={<Kanban/>}/>
-                        <Route path='/editor' element={<Editor/>}/>
-                        <Route path='/calendar' element={<Calendar/>}/>
-                        <Route path='/color-picker' element={<ColorPicker/>}/>
+                        <Route path='/kanban' component={Kanban}/>
+                        <Route path='/editor' component={Editor}/>
+                        <Route path='/calendar' component={Calendar}/>
+                        <Route path='/color-picker' component={ColorPicker}/>
 
                         {/* CHARTS */}
-                        <Route path='/sales' element={<Line/>}/>
-                        {/* <Route path='/area' element={<Area/>}/> */}
-                        {/* <Route path='/bar' element={<Bar/>}/> */}
-                        <Route path='/costs' element={<Pie/>}/>
-                        <Route path='/audience' element={<Audience/>}/>
-                        {/* <Route path='/color-mapping' element={<ColorMapping/>}/> */}
-                        {/* <Route path='/pyramid' element={<Pyramid/>}/> */}
-                        <Route path='/revenue' element={<Stacked/>}/>
-                    </Routes>
+                        <Route path='/sales' component={Line}/>
+                        {/* <Route path='/area' component={<Area/>}/> */}
+                        {/* <Route path='/bar' component={<Bar/>}/> */}
+                        <Route path='/costs' component={Pie}/>
+                        <Route path='/audience' component={Audience}/>
+                        {/* <Route path='/color-mapping' component={<ColorMapping/>}/> */}
+                        {/* <Route path='/pyramid' component={<Pyramid/>}/> */}
+                        <Route path='/revenue' component={Stacked}/>
+                    </React.Fragment>
                     </div>
                 </div>
             </div>
+            : 
+            <React.Fragment>
+                <Route path='/' component={Login}/>
+            </React.Fragment>
+            }
         </BrowserRouter>
     </div>
   )

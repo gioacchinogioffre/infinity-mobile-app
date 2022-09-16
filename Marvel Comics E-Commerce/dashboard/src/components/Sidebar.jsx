@@ -6,7 +6,7 @@ import { TooltipComponent } from '@syncfusion/ej2-react-popups'
 
 import { links } from '../data/dummy'
 import { useStateContext } from '../contexts/ContextProvider'
-import logo from '../data/infinityLogo1.png'
+import logo from '../data/logoInfinity.png'
 import { LegendItemStyle } from '@syncfusion/ej2-react-charts'
 
 
@@ -27,7 +27,7 @@ const Sidebar = () => {
         <>
           <div className='flex justify-between items-center'>
             <Link to='/' onClick={handleCloseSideBar} className='items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900'>
-              <img className='w-10 h-10' src={logo} alt='logo'/><span>Infinity</span>
+              <img className='w-20 h-10' src={logo} alt='logo'/><span className='ml-3'>INFINITY</span>
             </Link>
             <TooltipComponent content='Menu' position='BottomCenter'>
               <button type='button' onClick={()=>setActiveMenu(prev=> !prev)} className='text-xl rounded-full p-3 hover:bg-red-500 hover:text-white mt-4 block md:hidden'>
@@ -40,7 +40,7 @@ const Sidebar = () => {
               <div key={l.title}>
                 <p className='text-gray-400 m-3 mt-4 uppercase'>{l.title}</p>
                 {l.links.map(link => (
-                  <NavLink key={link.name} to={`/${link.name}`} onClick={handleCloseSideBar} style={({ isActive }) => ({backgroundColor: isActive ? currentColor : ''})} className={({ isActive })=> isActive ? activeLink : normalLink}>
+                  <NavLink key={link.name} to={`/${link.name}`} onClick={handleCloseSideBar} activeStyle={{backgroundColor: currentColor, color: 'white'}} className={({ isActive })=> isActive ? activeLink : normalLink}>
                     {link.icon}
                     <span className='capitalize'>{link.name}</span>
                   </NavLink>

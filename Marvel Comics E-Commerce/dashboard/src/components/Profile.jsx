@@ -90,7 +90,7 @@ const Profile = () => {
                 <div>
                 </div>
             </div>
-            <button className='mt-8 w-20 text-white p-2 rounded-md' style={{backgroundColor: currentColor}}>
+            <button className='mt-8 w-20 text-white p-2 rounded-md hover:drop-shadow-lg' style={{backgroundColor: currentColor}}>
                 Save All
             </button>
         </form>
@@ -99,6 +99,9 @@ const Profile = () => {
             <h1 className='dark:text-white text-lg mt-4'>Joaquín Gioffre</h1>
             <h3 className='dark:text-slate-500'>Admin / Front-End Developer</h3>
             <span className='dark:text-slate-500'>Buenos Aires, Argentina</span>
+            <button className='mt-8 w-44 text-white p-2 rounded-md bg-red-500 hover:drop-shadow-lg'>
+                Change password
+            </button>
         </div>
     </div>
   )

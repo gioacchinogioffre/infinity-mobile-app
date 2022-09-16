@@ -39,9 +39,11 @@ module.exports = {
           590: '590px',
         },
         backgroundImage: {
-          'hero-pattern':
-            "url('https://wallpaperaccess.com/full/238182.jpg')",
+          'hero-pattern':"url('https://wallpaperaccess.com/full/238182.jpg')",
+          'login-pattern': 'dashboard/src/data/backgroundLogin.jpg'
         },
+        
+        
       },
     },
     plugins: [],
